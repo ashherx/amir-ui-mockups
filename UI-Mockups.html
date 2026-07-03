@@ -1,0 +1,3028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI Mockups · Outstep for Amir Baluch</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f6f2;--surface:#fff;--surface2:#f2f0eb;--surface3:#ede9e2;
+  --border:#e4e1d9;--border2:#d8d4cc;--text:#1a1a1a;--muted:#5c5c5c;--dim:#9a9589;
+  --blue:#1D9DE4;--blue-l:#e8f5fd;--blue-d:#1585c4;--blue-ring:rgba(29,157,228,.14);
+  --green:#2a7a56;--green-l:#edf5f1;
+  --red:#DA2638;--red-l:#fdf0f1;
+  --gold:#b07800;--gold-l:#fffbe8;
+  --indigo:#3b5fd4;--indigo-l:#eef1fc;
+  --teal:#0e7490;--purple:#6b3fa0;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.05),0 1px 8px rgba(0,0,0,.04);
+  --shadow-md:0 2px 8px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.05);
+  --r-sm:6px;--r-md:10px;--r-lg:14px;
+  --t:.15s cubic-bezier(.4,0,.2,1);
+}
+html,body{height:100%;background:var(--surface3);font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased;color:var(--text)}
+
+/* ── CHROME ─────────────────────────────────────────────────────── */
+.chrome{
+  background:var(--surface);border-bottom:1px solid var(--border);
+  padding:11px 20px;display:flex;align-items:center;gap:16px;
+  position:sticky;top:0;z-index:200;box-shadow:var(--shadow-sm);
+}
+.chrome-brand{font-family:'DM Mono',monospace;font-size:12px;color:var(--text);font-weight:500;flex-shrink:0}
+.chrome-brand b{color:var(--blue)}
+.tabs{display:flex;gap:3px;flex:1;overflow-x:auto}
+.tab{font-size:12.5px;font-weight:500;padding:6px 14px;border-radius:var(--r-sm);border:none;cursor:pointer;transition:all var(--t);font-family:'Geist',sans-serif;background:transparent;color:var(--dim);white-space:nowrap}
+.tab:hover{background:var(--bg);color:var(--text)}
+.tab.on{background:var(--blue-l);color:var(--blue)}
+.chrome-tag{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--dim);letter-spacing:.06em;padding:4px 9px;border:1px solid var(--border);border-radius:var(--r-sm);white-space:nowrap}
+
+/* ── SCREEN WRAPPER ─────────────────────────────────────────────── */
+.screen{display:none;height:calc(100vh - 49px)}
+.screen.on{display:flex}
+
+/* ══════════════════════════════════════════════════════════════════
+   SCREEN 1: JESSICA DASHBOARD
+══════════════════════════════════════════════════════════════════ */
+.s1{background:var(--bg);display:grid;grid-template-columns:210px 1fr 272px}
+
+/* LEFT SIDEBAR */
+.s1-sidebar{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.s1-logo-wrap{padding:18px 16px 14px;border-bottom:1px solid var(--border)}
+.s1-logo{display:flex;align-items:center;gap:9px;margin-bottom:4px}
+.s1-logo-name{font-size:16px;font-weight:700}
+.jpulse{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:jp 2.4s ease infinite}
+@keyframes jp{0%,100%{box-shadow:0 0 0 0 rgba(29,157,228,.4)}70%{box-shadow:0 0 0 7px rgba(29,157,228,0)}}
+.s1-logo-status{font-size:11px;color:var(--green);display:flex;align-items:center;gap:5px}
+.s1-logo-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green)}
+.s1-nav-group{padding:10px 0}
+.s1-nav-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding:8px 16px 4px}
+.s1-nav-item{display:flex;align-items:center;gap:9px;padding:7px 16px;font-size:12.5px;color:var(--muted);cursor:pointer;transition:all var(--t);border-left:2px solid transparent;user-select:none}
+.s1-nav-item:hover{background:var(--bg);color:var(--text)}
+.s1-nav-item.on{background:var(--blue-l);color:var(--blue);border-left-color:var(--blue)}
+.s1-nav-icon{font-size:13px;width:17px;text-align:center;flex-shrink:0}
+.s1-badge{margin-left:auto;background:var(--blue);color:#fff;font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:10px}
+.s1-badge.gold{background:var(--gold-l);color:var(--gold);border:1px solid rgba(176,120,0,.2)}
+.s1-sidebar-footer{margin-top:auto;padding:14px 16px;border-top:1px solid var(--border)}
+.s1-agent-status{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:10px 12px}
+.s1-agent-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.s1-agent-row{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted)}
+.s1-agent-val{font-weight:600;color:var(--text)}
+
+/* MAIN AREA */
+.s1-main{overflow-y:auto;display:flex;flex-direction:column;min-width:0}
+.s1-topbar{padding:16px 20px 0;background:var(--bg)}
+
+/* COMMAND BAR */
+.cmd-bar{
+  display:flex;align-items:center;gap:10px;
+  background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-md);
+  padding:11px 15px;margin-bottom:16px;
+  transition:border-color var(--t),box-shadow var(--t);cursor:text;
+}
+.cmd-bar:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-ring)}
+.cmd-mic{font-size:16px;color:var(--blue);flex-shrink:0}
+.cmd-input{flex:1;border:none;outline:none;font-size:13.5px;color:var(--text);font-family:'Geist',sans-serif;background:transparent}
+.cmd-input::placeholder{color:var(--dim)}
+.cmd-shortcut{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);background:var(--bg);border:1px solid var(--border);padding:2px 7px;border-radius:4px;flex-shrink:0}
+.cmd-suggestions{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);margin:-12px 0 16px;box-shadow:var(--shadow-md);overflow:hidden;display:none}
+.cmd-suggestions.show{display:block}
+.cmd-suggestion{padding:9px 15px;font-size:12.5px;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--border);transition:background var(--t)}
+.cmd-suggestion:last-child{border-bottom:none}
+.cmd-suggestion:hover{background:var(--bg);color:var(--text)}
+.cmd-suggestion-icon{font-size:13px;flex-shrink:0}
+
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 20px 16px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:14px 16px;box-shadow:var(--shadow-sm);transition:box-shadow var(--t)}
+.kpi:hover{box-shadow:var(--shadow-md)}
+.kpi-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.kpi-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.kpi-sparkline{opacity:.8}
+.kpi-val{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;line-height:1;margin-bottom:4px}
+.kpi-change{font-size:11.5px;display:flex;align-items:center;gap:5px}
+.kpi-change.up{color:var(--green)}.kpi-change.neutral{color:var(--blue)}
+
+/* SECTION HEADER */
+.sec-head{display:flex;align-items:center;justify-content:space-between;padding:0 20px 12px}
+.sec-head-left{display:flex;align-items:center;gap:9px}
+.sec-title{font-size:13.5px;font-weight:600}
+.sec-count{background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
+.sec-link{font-size:12px;color:var(--blue);cursor:pointer;text-decoration:none}
+.sec-link:hover{text-decoration:underline}
+
+/* ACTION CARDS */
+.acards{padding:0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.acard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);overflow:hidden;transition:box-shadow var(--t),border-color var(--t)}
+.acard:hover{box-shadow:var(--shadow-md);border-color:var(--border2)}
+.acard-header{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;background:var(--bg);border-bottom:1px solid var(--border)}
+.acard-left{display:flex;align-items:center;gap:9px}
+.atype{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.09em;padding:3px 8px;border-radius:4px;text-transform:uppercase}
+.atype-email{background:var(--blue-l);color:var(--blue);border:1px solid rgba(29,157,228,.2)}
+.atype-crm{background:var(--green-l);color:var(--green);border:1px solid rgba(42,122,86,.2)}
+.atype-cal{background:var(--red-l);color:var(--red);border:1px solid rgba(218,38,56,.2)}
+.atype-text{background:var(--gold-l);color:var(--gold);border:1px solid rgba(176,120,0,.2)}
+.acard-contact{font-size:13px;font-weight:600}
+.acard-deal{font-size:11.5px;color:var(--muted);background:var(--surface3);padding:2px 7px;border-radius:4px;font-family:'DM Mono',monospace}
+.acard-time{font-size:11px;color:var(--dim);font-family:'DM Mono',monospace;flex-shrink:0}
+.acard-body{padding:13px 16px}
+.acard-preview{background:var(--bg);border-left:2.5px solid var(--border2);border-radius:0 6px 6px 0;padding:9px 13px;margin-bottom:11px}
+.acard-preview-line{font-size:12px;color:var(--muted);line-height:1.62}
+.acard-preview-line b{color:var(--text);font-weight:500}
+.acard-actions{display:flex;align-items:center;gap:7px}
+.btn{padding:6px 13px;border-radius:var(--r-sm);font-size:12px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:all var(--t);border:1px solid transparent}
+.btn-approve{background:var(--green-l);border-color:rgba(42,122,86,.22);color:var(--green)}
+.btn-approve:hover{background:#cde8da}
+.btn-edit{background:var(--surface);border-color:var(--border);color:var(--muted)}
+.btn-edit:hover{border-color:var(--border2);color:var(--text)}
+.btn-undo{background:var(--red-l);border-color:rgba(218,38,56,.18);color:var(--red)}
+.btn-undo:hover{background:#fadadd}
+.btn-all{margin-left:auto;background:var(--blue);border-color:var(--blue);color:#fff;padding:6px 14px}
+.btn-all:hover{background:var(--blue-d)}
+
+/* RIGHT PANEL */
+.s1-right{border-left:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;overflow:hidden}
+.s1-right-head{padding:16px 16px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.s1-right-title{font-size:13px;font-weight:600}
+.s1-right-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim)}
+.s1-right-body{flex:1;overflow-y:auto;padding:14px 16px}
+.log-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.log-items{display:flex;flex-direction:column;gap:0}
+.log-item{display:flex;gap:10px;padding-bottom:14px;position:relative}
+.log-item::before{content:'';position:absolute;left:10px;top:20px;bottom:0;width:1px;background:var(--border)}
+.log-item:last-child::before{display:none}
+.log-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:1px;z-index:1;position:relative}
+.log-dot.email{background:var(--blue-l);color:var(--blue)}
+.log-dot.crm{background:var(--green-l);color:var(--green)}
+.log-dot.cal{background:var(--red-l);color:var(--red)}
+.log-dot.text{background:var(--gold-l);color:var(--gold)}
+.log-content{}
+.log-time{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--dim);margin-bottom:2px}
+.log-action{font-size:12px;font-weight:500;color:var(--text);margin-bottom:1px}
+.log-detail{font-size:11.5px;color:var(--muted);line-height:1.5}
+.log-status{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-family:'DM Mono',monospace;margin-top:4px}
+.log-status.approved{color:var(--green)}
+.log-status.pending{color:var(--gold)}
+.coming-up-section{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.cup-item{padding:9px 11px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:7px}
+.cup-time{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--dim);margin-bottom:3px}
+.cup-action{font-size:12px;font-weight:500;color:var(--text);margin-bottom:1px}
+.cup-contact{font-size:11.5px;color:var(--muted)}
+.cup-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;padding:2px 6px;border-radius:3px;background:var(--gold-l);color:var(--gold);border:1px solid rgba(176,120,0,.18);margin-top:5px}
+
+/* ══════════════════════════════════════════════════════════════════
+   SCREEN 2: VOICE COMMAND
+══════════════════════════════════════════════════════════════════ */
+.s2{
+  background:var(--bg);align-items:center;justify-content:center;
+  background-image:radial-gradient(var(--border) 1px,transparent 1px);
+  background-size:28px 28px;
+  padding:24px;
+}
+.s2-phone{
+  width:380px;background:var(--surface);border-radius:46px;
+  box-shadow:0 0 0 1px var(--border2),0 20px 60px rgba(0,0,0,.14),0 40px 100px rgba(0,0,0,.08);
+  overflow:hidden;position:relative;
+}
+.s2-notch{height:34px;background:var(--surface);display:flex;align-items:center;justify-content:space-between;padding:0 28px}
+.s2-notch-time{font-size:13px;font-weight:600;color:var(--text)}
+.s2-notch-icons{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--text)}
+.s2-content{padding:6px 22px 28px;background:var(--surface)}
+.s2-app-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding:0 2px}
+.s2-app-logo{display:flex;align-items:center;gap:8px}
+.s2-app-name{font-size:18px;font-weight:800}
+.s2-app-sub{font-size:11px;color:var(--green);display:flex;align-items:center;gap:4px}
+.s2-app-sub::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--green)}
+.s2-gear{font-size:17px;color:var(--dim);cursor:pointer}
+
+.s2-wave-wrap{background:var(--bg);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;gap:3px;height:62px;justify-content:center}
+.wbar{width:3px;border-radius:3px;background:linear-gradient(to top,var(--blue-l),var(--blue));animation:wb 1s ease infinite}
+.wbar:nth-child(odd){animation-delay:.15s}
+.wbar:nth-child(1){height:12px}.wbar:nth-child(2){height:26px}.wbar:nth-child(3){height:40px}
+.wbar:nth-child(4){height:32px}.wbar:nth-child(5){height:48px}.wbar:nth-child(6){height:36px}
+.wbar:nth-child(7){height:22px}.wbar:nth-child(8){height:42px}.wbar:nth-child(9){height:30px}
+.wbar:nth-child(10){height:16px}.wbar:nth-child(11){height:38px}.wbar:nth-child(12){height:24px}
+@keyframes wb{0%,100%{transform:scaleY(.3);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+
+.s2-transcript{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:12px 14px;margin-bottom:12px;font-size:13px;color:var(--text);line-height:1.65}
+.s2-cursor{display:inline-block;width:2px;height:13px;background:var(--blue);vertical-align:middle;margin-left:2px;animation:blink .8s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.s2-entities{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
+.s2-entity-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;width:100%;margin-bottom:2px}
+.s2-entity{font-family:'DM Mono',monospace;font-size:10.5px;padding:3px 9px;border-radius:4px;letter-spacing:.04em}
+.s2-entity.person{background:var(--indigo-l);color:var(--indigo);border:1px solid rgba(59,95,212,.18)}
+.s2-entity.amount{background:var(--green-l);color:var(--green);border:1px solid rgba(42,122,86,.18)}
+.s2-entity.date{background:var(--red-l);color:var(--red);border:1px solid rgba(218,38,56,.18)}
+.s2-entity.action{background:var(--gold-l);color:var(--gold);border:1px solid rgba(176,120,0,.18)}
+
+.s2-confidence{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:11.5px;color:var(--muted)}
+.s2-conf-bar{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.s2-conf-fill{height:100%;background:linear-gradient(90deg,var(--green),#4ade80);border-radius:3px;width:97%}
+.s2-conf-val{font-family:'DM Mono',monospace;font-size:10px;color:var(--green);font-weight:500}
+
+.s2-actions{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.s2-action{display:flex;align-items:center;gap:9px;padding:9px 12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);transition:border-color var(--t)}
+.s2-action.done{border-color:rgba(42,122,86,.25);background:var(--green-l)}
+.s2-action-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0}
+.s2-action-text{font-size:12.5px;color:var(--text);flex:1;line-height:1.4}
+.s2-action-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}
+.s2-action-status{font-size:10.5px;font-family:'DM Mono',monospace;white-space:nowrap}
+.s2-action-status.done{color:var(--green)}
+.s2-action-status.doing{color:var(--blue);animation:blink .8s step-end infinite}
+.s2-action-prog{width:48px;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.s2-action-prog-fill{height:100%;border-radius:2px;background:var(--green)}
+
+.s2-review-btn{display:block;width:100%;padding:13px;background:var(--blue);color:#fff;border:none;border-radius:14px;font-size:15px;font-weight:600;text-align:center;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.s2-review-btn:hover{background:var(--blue-d)}
+.s2-home-ind{height:28px;display:flex;align-items:center;justify-content:center;background:var(--surface);margin-top:4px}
+.s2-home-bar{width:120px;height:5px;background:var(--text);border-radius:3px;opacity:.18}
+
+/* ══════════════════════════════════════════════════════════════════
+   SCREEN 3: INVESTOR PIPELINE CRM
+══════════════════════════════════════════════════════════════════ */
+.s3{background:var(--bg);flex-direction:column;overflow:hidden}
+.s3-header{background:var(--surface);border-bottom:1px solid var(--border);padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;box-shadow:var(--shadow-sm)}
+.s3-title{font-size:16px;font-weight:700;display:flex;align-items:center;gap:9px}
+.s3-title-count{font-size:12px;font-weight:500;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:2px 8px;border-radius:10px}
+.s3-hright{display:flex;gap:7px;align-items:center}
+.s3-search{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-sm);padding:7px 12px;font-size:12.5px;color:var(--text);font-family:'Geist',sans-serif;outline:none;width:180px;transition:border-color var(--t)}
+.s3-search:focus{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue-ring)}
+.s3-fbtn{padding:7px 12px;border-radius:var(--r-sm);background:var(--surface);border:1px solid var(--border);font-size:12.5px;color:var(--muted);cursor:pointer;font-family:'Geist',sans-serif;transition:all var(--t)}
+.s3-fbtn:hover{border-color:var(--border2);color:var(--text)}
+.s3-new{padding:7px 14px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-sm);font-size:12.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.s3-new:hover{background:var(--blue-d)}
+
+.jessica-banner{background:var(--blue-l);border-bottom:1px solid rgba(29,157,228,.15);padding:7px 22px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--blue);flex-shrink:0}
+.jessica-banner b{font-weight:600}
+.jdot{width:6px;height:6px;border-radius:50%;background:var(--blue);display:inline-block;animation:jp 2.4s ease infinite}
+
+/* PIPELINE FUNNEL */
+.s3-funnel-wrap{padding:16px 22px 14px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0}
+.s3-funnel-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.funnel{display:flex;gap:3px;align-items:stretch}
+.funnel-stage{flex:1;cursor:pointer;transition:opacity var(--t)}
+.funnel-stage:hover{opacity:.85}
+.funnel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.funnel-name{font-size:10.5px;font-weight:500;color:var(--muted)}
+.funnel-cnt{font-family:'DM Mono',monospace;font-size:10px;color:var(--text);font-weight:600}
+.funnel-bar{height:8px;border-radius:3px;transition:filter var(--t)}
+.funnel-stage:hover .funnel-bar{filter:brightness(.92)}
+.funnel-val{font-size:10px;color:var(--dim);margin-top:3px;font-family:'DM Mono',monospace}
+
+.s3-body{flex:1;overflow-y:auto;padding:16px 22px}
+
+/* SMART FILTERS */
+.s3-filters{display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap}
+.s3-filter{padding:5px 13px;border-radius:20px;font-size:12px;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--muted);transition:all var(--t);display:flex;align-items:center;gap:5px;font-family:'Geist',sans-serif}
+.s3-filter:hover{border-color:var(--border2);color:var(--text)}
+.s3-filter.on{background:var(--text);color:#fff;border-color:var(--text)}
+.s3-filter-cnt{font-family:'DM Mono',monospace;font-size:10px;background:rgba(255,255,255,.2);padding:0 5px;border-radius:3px}
+.s3-filter.on .s3-filter-cnt{background:rgba(255,255,255,.2);color:#fff}
+.s3-filter:not(.on) .s3-filter-cnt{background:var(--bg);color:var(--dim);border:1px solid var(--border)}
+
+/* CRM TABLE */
+.crm-table{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;border-collapse:collapse;box-shadow:var(--shadow-sm)}
+.crm-thead{background:#1a1a1a}
+.crm-th{padding:10px 14px;text-align:left;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.42);font-weight:400;white-space:nowrap;cursor:pointer;user-select:none;transition:color var(--t)}
+.crm-th:hover{color:rgba(255,255,255,.7)}
+.crm-th.sort::after{content:' ↕';opacity:.4}
+.crm-tr{border-top:1px solid var(--border);transition:background var(--t);cursor:pointer}
+.crm-tr:hover{background:#faf9f6}
+.crm-td{padding:11px 14px;font-size:13px;vertical-align:middle}
+.contact-cell{display:flex;align-items:center;gap:9px}
+.avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;letter-spacing:.02em}
+.contact-name{font-weight:600;color:var(--text)}
+.contact-company{font-size:11px;color:var(--muted)}
+.deal-cell{display:flex;flex-direction:column;gap:3px}
+.deal-amt{font-weight:600;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--text)}
+.deal-bar-wrap{width:64px;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.deal-bar-fill{height:100%;border-radius:2px;background:var(--blue);opacity:.6}
+.sbadge{display:inline-flex;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.05em;padding:3px 8px;border-radius:4px;white-space:nowrap}
+.s-committed{background:var(--green-l);color:var(--green);border:1px solid rgba(42,122,86,.2)}
+.s-interested{background:var(--indigo-l);color:var(--indigo);border:1px solid rgba(59,95,212,.2)}
+.s-cpa{background:var(--gold-l);color:var(--gold);border:1px solid rgba(176,120,0,.2)}
+.s-cold{background:var(--bg);color:var(--dim);border:1px solid var(--border)}
+.s-intro{background:var(--blue-l);color:var(--blue);border:1px solid rgba(29,157,228,.2)}
+.crm-time{color:var(--muted);font-size:11.5px;font-family:'DM Mono',monospace}
+.ai-tag{display:inline-flex;align-items:center;gap:4px;font-family:'DM Mono',monospace;font-size:9px;padding:2px 6px;border-radius:3px;background:var(--blue-l);color:var(--blue);border:1px solid rgba(29,157,228,.18)}
+.crm-actions{display:flex;gap:5px}
+.crm-btn{padding:4px 9px;border-radius:4px;font-size:11px;cursor:pointer;font-family:'Geist',sans-serif;border:1px solid var(--border);background:var(--bg);color:var(--muted);transition:all var(--t)}
+.crm-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-l)}
+
+/* ══════════════════════════════════════════════════════════════════
+   SCREEN 4: ORDER PORTAL
+══════════════════════════════════════════════════════════════════ */
+.s4{background:var(--bg);flex-direction:column;overflow:hidden}
+.s4-header{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;box-shadow:var(--shadow-sm)}
+.s4-logo{font-size:14.5px;font-weight:700;display:flex;align-items:center;gap:10px}
+.s4-logo-divider{color:var(--border2)}
+.s4-spa-name{font-size:13px;font-weight:500;color:var(--muted)}
+.s4-header-right{display:flex;align-items:center;gap:10px}
+.s4-header-right span{font-size:12.5px;color:var(--muted)}
+.s4-cart-btn{display:flex;align-items:center;gap:6px;padding:7px 15px;background:var(--green);color:#fff;border:none;border-radius:var(--r-sm);font-size:13px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.s4-cart-btn:hover{background:#22664a}
+
+/* STEP PROGRESS */
+.s4-steps{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 22px;display:flex;align-items:center;gap:0;flex-shrink:0}
+.s4-step{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;padding-right:8px}
+.s4-step-dot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;transition:all var(--t)}
+.s4-step-dot.done{background:var(--green);color:#fff}
+.s4-step-dot.active{background:var(--blue);color:#fff;box-shadow:0 0 0 3px var(--blue-ring)}
+.s4-step-dot.todo{background:var(--bg);color:var(--dim);border:1.5px solid var(--border)}
+.s4-step-name{color:var(--muted)}
+.s4-step.active .s4-step-name{color:var(--blue);font-weight:600}
+.s4-step.done .s4-step-name{color:var(--green)}
+.s4-step-line{flex:1;height:1px;background:var(--border);margin:0 8px;min-width:20px}
+.s4-step-line.done{background:var(--green);opacity:.4}
+
+.s4-body{flex:1;display:flex;overflow:hidden;min-height:0}
+.s4-catalog{flex:1;padding:18px 22px;overflow-y:auto;min-width:0}
+
+/* CATEGORY FILTERS */
+.s4-cats{display:flex;gap:7px;margin-bottom:16px;flex-wrap:wrap}
+.s4-cat{padding:6px 13px;border-radius:20px;font-size:12px;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--muted);transition:all var(--t);font-family:'Geist',sans-serif;display:flex;align-items:center;gap:5px}
+.s4-cat:hover{border-color:var(--border2);color:var(--text)}
+.s4-cat.on{background:var(--text);color:#fff;border-color:var(--text)}
+.s4-cat-cnt{font-family:'DM Mono',monospace;font-size:9px;opacity:.6}
+
+.s4-section-head{font-size:13px;font-weight:600;margin-bottom:12px;color:var(--text)}
+.s4-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:20px}
+.prod-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:box-shadow var(--t),border-color var(--t);cursor:pointer}
+.prod-card:hover{box-shadow:var(--shadow-md);border-color:var(--border2)}
+.prod-img{height:72px;display:flex;align-items:center;justify-content:center;font-size:28px;position:relative}
+.prod-img.blue{background:var(--blue-l)}.prod-img.green{background:var(--green-l)}.prod-img.gold{background:var(--gold-l)}
+.stock-dot{position:absolute;top:8px;right:8px;width:8px;height:8px;border-radius:50%;border:1.5px solid var(--surface)}
+.stock-dot.in{background:var(--green)}.stock-dot.low{background:var(--gold)}.stock-dot.out{background:var(--red)}
+.prod-info{padding:11px 13px}
+.prod-vendor{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:3px}
+.prod-name{font-size:12.5px;font-weight:600;margin-bottom:2px;line-height:1.3}
+.prod-price{font-size:11.5px;color:var(--muted);margin-bottom:9px}
+.prod-stock{font-size:10.5px;margin-bottom:8px;font-family:'DM Mono',monospace}
+.prod-stock.in{color:var(--green)}.prod-stock.low{color:var(--gold)}.prod-stock.out{color:var(--red)}
+.prod-add{display:flex;align-items:center;gap:5px}
+.qty-btn{width:25px;height:25px;border-radius:5px;border:1px solid var(--border);background:var(--bg);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--text);transition:all var(--t)}
+.qty-btn:hover{border-color:var(--border2)}
+.qty-val{font-size:13px;font-weight:600;width:22px;text-align:center;color:var(--text)}
+.add-btn{margin-left:auto;padding:4px 11px;color:#fff;border:none;border-radius:5px;font-size:11.5px;cursor:pointer;font-family:'Geist',sans-serif;font-weight:500;transition:background var(--t)}
+.add-btn.add{background:var(--green)}.add-btn.add:hover{background:#22664a}
+.add-btn.in{background:var(--blue)}.add-btn.in:hover{background:var(--blue-d)}
+
+/* CART SIDEBAR */
+.s4-sidebar{width:300px;flex-shrink:0;background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.s4-sb-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.s4-sb-title{font-size:13.5px;font-weight:700}
+.s4-sb-count{background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:10px}
+.s4-order-items{padding:12px 18px;display:flex;flex-direction:column;gap:9px;border-bottom:1px solid var(--border);flex-shrink:0}
+.oitem{display:flex;align-items:center;gap:10px}
+.oitem-icon{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.oitem-icon.blue{background:var(--blue-l)}.oitem-icon.green{background:var(--green-l)}.oitem-icon.gold{background:var(--gold-l)}
+.oitem-info{flex:1;min-width:0}
+.oitem-name{font-size:12.5px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.oitem-detail{font-size:11px;color:var(--muted)}
+.oitem-price{font-size:13px;font-weight:600;flex-shrink:0;font-family:'DM Mono',monospace}
+
+/* SPLIT PREVIEW */
+.split-section{padding:12px 18px;border-bottom:1px solid var(--border);flex-shrink:0}
+.split-section-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.split-row{margin-bottom:9px}
+.split-row:last-child{margin-bottom:0}
+.split-row-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px}
+.split-vendor{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text)}
+.split-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.split-right{display:flex;gap:8px;align-items:center}
+.split-pct{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim)}
+.split-amt{font-family:'DM Mono',monospace;font-size:11.5px;font-weight:600;color:var(--text)}
+.split-bar-wrap{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.split-bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+
+.s4-totals{padding:12px 18px;border-bottom:1px solid var(--border);flex-shrink:0}
+.total-row{display:flex;justify-content:space-between;font-size:13px;padding:3px 0;color:var(--text)}
+.total-row.main{font-size:15px;font-weight:700;padding-top:8px;border-top:1px solid var(--border);margin-top:4px}
+.spread-row{color:var(--green);font-size:12px;font-weight:500}
+.s4-place-btn{margin:13px 18px 8px;display:block;width:calc(100% - 36px);padding:12px;background:var(--green);color:#fff;border:none;border-radius:var(--r-md);font-size:14px;font-weight:600;text-align:center;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.s4-place-btn:hover{background:#22664a}
+.s4-dispatch-note{text-align:center;font-size:11px;color:var(--dim);padding:0 18px 14px;line-height:1.5}
+.s4-savings{margin:0 18px 12px;padding:9px 12px;background:var(--green-l);border:1px solid rgba(42,122,86,.2);border-radius:var(--r-sm);font-size:12px;color:var(--green);text-align:center;font-weight:500}
+
+/* ── TOAST ──────────────────────────────────────────────────── */
+.toast{position:fixed;bottom:28px;right:28px;z-index:9999;background:var(--text);color:#fff;padding:10px 18px;border-radius:var(--r-md);font-size:13px;font-weight:500;box-shadow:var(--shadow-md);opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none;max-width:320px;line-height:1.5}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.info{background:var(--blue)}
+.toast.success{background:var(--green)}
+.toast.warn{background:var(--gold)}
+
+/* ── CARD STATES ─────────────────────────────────────────────── */
+.acard{transition:border-color .3s,background .3s,opacity .3s;overflow:hidden}
+.acard.approved{border-color:var(--green)!important;background:var(--green-l)!important}
+.acard.approved .acard-header{background:rgba(42,122,86,.08)!important}
+.acard.approved .btn-approve{background:var(--green);color:#fff;border-color:var(--green)}
+.acard.undone{border-color:var(--red)!important;opacity:.45}
+
+/* ── COMMAND BAR PROCESSING ──────────────────────────────────── */
+.cmd-bar.processing{border-color:var(--blue);background:var(--blue-l)}
+.cmd-spinner{display:none;width:15px;height:15px;border:2px solid rgba(29,157,228,.25);border-top-color:var(--blue);border-radius:50%;animation:spin .65s linear infinite;flex-shrink:0}
+.cmd-bar.processing .cmd-spinner{display:block}
+.cmd-bar.processing .cmd-mic{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── EDIT MODE ───────────────────────────────────────────────── */
+.acard-preview.editing{border-left-color:var(--blue);background:rgba(29,157,228,.05)}
+.preview-textarea{display:none;width:100%;border:none;background:transparent;font-size:12px;color:var(--text);font-family:'Geist',sans-serif;resize:none;outline:none;line-height:1.65;min-height:62px}
+.acard-preview.editing .preview-textarea{display:block}
+.acard-preview.editing .acard-preview-line{display:none}
+
+/* ── ROW DETAIL PANEL ────────────────────────────────────────── */
+.row-detail-row td{padding:0!important;border-top:none!important;background:transparent}
+.rdp{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1);background:var(--blue-l);border-top:1px solid rgba(29,157,228,.18)}
+.rdp.open{max-height:180px}
+.rdp-inner{padding:15px 18px;display:grid;grid-template-columns:1fr 1fr auto;gap:16px;align-items:start}
+.rdp-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+.rdp-content{font-size:12.5px;color:var(--text);line-height:1.55}
+.rdp-actions{display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.rdp-btn{padding:6px 14px;border-radius:var(--r-sm);font-size:12px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:all var(--t);white-space:nowrap;border:none}
+.rdp-btn-primary{background:var(--blue);color:#fff}.rdp-btn-primary:hover{background:var(--blue-d)}
+.rdp-btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border)}.rdp-btn-secondary:hover{border-color:var(--blue);color:var(--blue)}
+.crm-tr{cursor:pointer}.crm-tr.expanded{background:var(--blue-l)!important}
+.crm-tr.expanded .contact-name{color:var(--blue)}
+
+/* ── STAGE DROPDOWN ──────────────────────────────────────────── */
+.stage-picker{position:fixed;z-index:9000;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--shadow-md);padding:5px;min-width:150px}
+.stage-pick-item{padding:7px 11px;border-radius:var(--r-sm);cursor:pointer;font-size:12.5px;transition:background var(--t);display:flex;align-items:center;gap:8px}
+.stage-pick-item:hover{background:var(--bg)}
+.sbadge{cursor:pointer;transition:opacity var(--t)}.sbadge:hover{opacity:.75}
+
+/* ── SORT ────────────────────────────────────────────────────── */
+.crm-th.sort::after{content:' ↕';opacity:.35}
+.crm-th.sort-asc::after{content:' ↑';opacity:.85!important}
+.crm-th.sort-desc::after{content:' ↓';opacity:.85!important}
+
+/* ── FUNNEL ACTIVE ───────────────────────────────────────────── */
+.funnel-stage{cursor:pointer;transition:opacity var(--t)}
+.funnel-stage:hover{opacity:.82}
+.funnel-stage.active .funnel-bar{outline:2px solid var(--blue);outline-offset:2px}
+.funnel-stage.active .funnel-name{color:var(--text);font-weight:600}
+.funnel-stage.active .funnel-cnt{color:var(--blue)}
+
+/* ── VOICE RECORDING ─────────────────────────────────────────── */
+.s2-wave-wrap{cursor:pointer;transition:background .2s}.s2-wave-wrap:hover{background:var(--border)}
+.s2-wave-wrap.stopped .wbar{animation-play-state:paused!important;opacity:.18}
+.s2-rec-ind{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;color:var(--red);margin-bottom:8px;font-weight:500;cursor:pointer}
+.s2-rec-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:rb 1s ease infinite;flex-shrink:0}
+.s2-wave-wrap.stopped~.s2-review-btn,.s2-rec-ind.paused{color:var(--muted)}
+.s2-rec-ind.paused .s2-rec-dot{animation:none;opacity:.35}
+@keyframes rb{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ── ORDER SUCCESS ───────────────────────────────────────────── */
+.s4-overlay{position:absolute;inset:0;z-index:50;background:rgba(247,246,242,.92);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.s4-overlay.show{opacity:1;pointer-events:all}
+.s4-success-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;max-width:420px;width:90%;text-align:center;box-shadow:var(--shadow-md)}
+.suc-icon{font-size:48px;margin-bottom:12px}
+.suc-title{font-size:19px;font-weight:700;color:var(--green);margin-bottom:6px}
+.suc-sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.65}
+.suc-vendors{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;text-align:left}
+.suc-vendor{display:flex;align-items:center;gap:9px;font-size:12.5px;padding:8px 12px;background:var(--bg);border-radius:var(--r-sm)}
+.suc-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.suc-close{padding:10px 24px;background:var(--green);color:#fff;border:none;border-radius:var(--r-sm);font-size:13.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.suc-close:hover{background:#22664a}
+
+/* ── LOG ITEM EXPAND ─────────────────────────────────────────── */
+.log-item{cursor:pointer;border-radius:var(--r-sm);padding:2px 4px;margin:-2px -4px;transition:background var(--t)}
+.log-item:hover{background:var(--bg)}
+.log-item .log-extra{display:none;font-size:11.5px;color:var(--muted);margin-top:4px;padding-top:4px;border-top:1px solid var(--border);line-height:1.6}
+.log-item.open .log-extra{display:block}
+
+/* ── PRODUCT CARD HOVER ──────────────────────────────────────── */
+.prod-card{position:relative}
+
+
+/* ── INTERACTIVE ADDITIONS ─────────────────────────── */
+/* Card transitions */
+.acard{transition:border-color .25s,background .25s,opacity .35s,transform .35s,max-height .35s}
+.acard.is-editing .acard-preview{background:var(--blue-l);border-left-color:var(--blue)}
+/* Sort indicators */
+.crm-th.sort{user-select:none}
+.crm-th.sort-asc::after{content:' ↑';color:var(--blue)}
+.crm-th.sort-desc::after{content:' ↓';color:var(--blue)}
+.crm-th.sort:hover{color:rgba(255,255,255,.75)}
+/* Detail row */
+.crm-detail-row{display:none;background:var(--bg)}
+.crm-detail-row.open{display:table-row}
+.crm-detail-row td{padding:0}
+.detail-panel{padding:14px 16px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;animation:fadeUp .2s ease}
+.detail-sec-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+.detail-entry{font-size:12.5px;color:var(--text);margin-bottom:5px;display:flex;align-items:flex-start;gap:6px}
+.detail-entry span{color:var(--muted);min-width:56px;flex-shrink:0}
+.detail-actions{display:flex;gap:7px;margin-top:10px}
+.detail-btn{padding:6px 13px;border-radius:var(--r-sm);border:1px solid var(--border);background:var(--surface);font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;color:var(--muted);transition:all var(--t)}
+.detail-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-l)}
+.detail-btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+.detail-btn.primary:hover{background:var(--blue-d)}
+/* Stage dropdown */
+.stage-dropdown{position:fixed;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--shadow-md);z-index:300;min-width:148px;overflow:hidden;display:none}
+.stage-option{padding:8px 13px;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background var(--t);color:var(--text)}
+.stage-option:hover{background:var(--bg)}
+.stage-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+/* Overlay */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:400;display:none;align-items:center;justify-content:center}
+.overlay.open{display:flex}
+/* Compose modal */
+.compose-modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);width:460px;box-shadow:var(--shadow-md);overflow:hidden}
+.compose-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.compose-title{font-size:14px;font-weight:600}
+.compose-x{width:26px;height:26px;border-radius:50%;border:none;background:var(--bg);cursor:pointer;font-size:16px;color:var(--muted);display:flex;align-items:center;justify-content:center;line-height:1}
+.compose-x:hover{background:var(--surface2);color:var(--text)}
+.compose-body{padding:14px 18px;display:flex;flex-direction:column;gap:10px}
+.compose-field label{display:block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.compose-input{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;font-family:'Geist',sans-serif;color:var(--text);background:var(--bg);outline:none;transition:border-color var(--t)}
+.compose-input:focus,.compose-textarea:focus{border-color:var(--blue)}
+.compose-textarea{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;font-family:'Geist',sans-serif;color:var(--text);background:var(--bg);outline:none;resize:vertical;min-height:90px;transition:border-color var(--t)}
+.compose-foot{padding:12px 18px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end}
+.compose-send{padding:8px 16px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-sm);font-size:13px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.compose-send:hover{background:var(--blue-d)}
+.compose-cancel{padding:8px 14px;background:var(--surface);color:var(--muted);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;cursor:pointer;font-family:'Geist',sans-serif}
+/* New Investor modal */
+.new-inv-modal{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);width:480px;box-shadow:var(--shadow-md);overflow:hidden}
+.modal-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-head-title{font-size:14px;font-weight:600}
+.modal-body{padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.modal-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.modal-field label{display:block;font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.modal-input{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;font-family:'Geist',sans-serif;color:var(--text);background:var(--bg);outline:none;transition:border-color var(--t)}
+.modal-input:focus{border-color:var(--blue)}
+.modal-select{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;font-family:'Geist',sans-serif;color:var(--text);background:var(--bg);outline:none}
+.modal-foot{padding:12px 18px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end}
+.modal-save{padding:8px 16px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-sm);font-size:13px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif}
+.modal-close-btn{padding:8px 14px;background:var(--surface);color:var(--muted);border:1px solid var(--border);border-radius:var(--r-sm);font-size:13px;cursor:pointer;font-family:'Geist',sans-serif}
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--text);color:#fff;padding:10px 16px;border-radius:var(--r-md);font-size:13px;z-index:600;box-shadow:var(--shadow-md);opacity:0;transform:translateY(10px);transition:all .25s ease;pointer-events:none;max-width:320px}
+.toast.visible{opacity:1;transform:translateY(0)}
+/* Empty state */
+.empty-state{text-align:center;padding:36px 20px 24px}
+.empty-state-icon{font-size:30px;margin-bottom:10px}
+.empty-state-title{font-size:14px;font-weight:600;margin-bottom:5px}
+.empty-state-desc{font-size:12.5px;color:var(--muted);line-height:1.65}
+/* Edit textarea */
+.edit-ta{width:100%;padding:8px 10px;border:1.5px solid var(--blue);border-radius:var(--r-sm);font-size:12.5px;font-family:'Geist',sans-serif;color:var(--text);background:var(--surface);outline:none;resize:vertical;min-height:60px}
+/* Spinner */
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:12px;height:12px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:5px}
+/* Order confirm */
+.order-confirm{padding:22px 18px;text-align:center;background:var(--green-l);border-top:1px solid rgba(42,122,86,.2)}
+.order-confirm-icon{font-size:28px;margin-bottom:8px}
+.order-confirm-title{font-size:15px;font-weight:700;color:var(--green);margin-bottom:3px}
+.order-confirm-id{font-family:'DM Mono',monospace;font-size:10px;color:var(--dim);margin-bottom:10px}
+.order-confirm-desc{font-size:12.5px;color:var(--muted);margin-bottom:14px;line-height:1.6}
+.order-confirm-btn{padding:8px 16px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:12.5px;cursor:pointer;font-family:'Geist',sans-serif;color:var(--text)}
+/* Sbadge cursor */
+.sbadge{cursor:pointer;transition:opacity var(--t)}
+.sbadge:hover{opacity:.8}
+/* Clickable rows */
+.crm-tr{cursor:pointer}
+.crm-tr:hover{background:#f5f3ee}
+
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE + MOBILE NAV
+══════════════════════════════════════════════════════════════ */
+
+/* Hamburger button (hidden on desktop) */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:4px;width:32px;height:32px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface);cursor:pointer;flex-shrink:0}
+.hamburger span{display:block;width:16px;height:2px;background:var(--text);margin:0 auto;border-radius:2px}
+
+/* Mobile tab drawer (hidden on desktop) */
+.mobile-tabs{display:none;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:49px;z-index:190;overflow:hidden;max-height:0;transition:max-height .25s ease}
+.mobile-tabs.open{max-height:260px}
+.mtab{display:flex;align-items:center;gap:10px;padding:12px 18px;font-size:13.5px;font-weight:500;color:var(--muted);background:transparent;border:none;border-bottom:1px solid var(--border);text-align:left;cursor:pointer;font-family:'Geist',sans-serif}
+.mtab:last-child{border-bottom:none}
+.mtab.on{background:var(--blue-l);color:var(--blue)}
+.mtab-icon{font-size:15px}
+
+/* Drawer close buttons (hidden on desktop) */
+.drawer-close{display:none;position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;border:none;background:var(--bg);color:var(--muted);font-size:17px;cursor:pointer;align-items:center;justify-content:center;z-index:5}
+
+/* Scrims (hidden on desktop) */
+.s1-scrim,.s4-scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:150}
+.s1-scrim.open,.s4-scrim.open{display:block}
+
+/* Mobile-only toolbars */
+.s1-mobile-bar{display:none;gap:8px;padding:12px 16px 0}
+.mobile-nav-btn{display:flex;align-items:center;gap:6px;padding:7px 13px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm);font-size:12px;color:var(--muted);cursor:pointer;font-family:'Geist',sans-serif}
+.mobile-nav-btn span{white-space:nowrap}
+
+/* CRM table horizontal scroll wrapper */
+.crm-table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r-lg)}
+.crm-table-scroll .crm-table{min-width:760px}
+
+/* ── TABLET (≤968px) ─────────────────────────────────────────── */
+@media(max-width:968px){
+  .s1{grid-template-columns:1fr}
+  .s1-sidebar{
+    position:fixed;top:0;left:0;bottom:0;width:230px;z-index:200;
+    transform:translateX(-100%);transition:transform .25s ease;box-shadow:var(--shadow-md);
+  }
+  .s1-sidebar.open{transform:translateX(0)}
+  .s1-right{
+    position:fixed;top:0;right:0;bottom:0;width:280px;z-index:200;
+    transform:translateX(100%);transition:transform .25s ease;box-shadow:var(--shadow-md);
+  }
+  .s1-right.open{transform:translateX(0)}
+  .s1-mobile-bar{display:flex}
+  .drawer-close{display:flex}
+
+  .s4-sidebar{
+    position:fixed;top:0;right:0;bottom:0;width:320px;max-width:88vw;z-index:200;
+    transform:translateX(100%);transition:transform .25s ease;box-shadow:var(--shadow-md);
+  }
+  .s4-sidebar.open{transform:translateX(0)}
+}
+
+/* ── MOBILE (≤640px) ─────────────────────────────────────────── */
+@media(max-width:640px){
+  .chrome{padding:10px 14px}
+  .tabs{display:none}
+  .hamburger{display:flex}
+  .mobile-tabs{display:flex}
+  .chrome-tag{display:none}
+  .chrome-brand{font-size:11px}
+
+  .screen{height:calc(100vh - 49px)}
+
+  /* Screen 1 */
+  .s1-topbar{padding:12px 14px 0}
+  .kpis{grid-template-columns:1fr;padding:0 14px 14px;gap:10px}
+  .sec-head{padding:0 14px 10px}
+  .acards{padding:0 14px 16px}
+  .acard-header{flex-wrap:wrap;gap:6px}
+  .acard-actions{flex-wrap:wrap}
+  .btn-all{margin-left:0;width:100%;text-align:center}
+  .cmd-bar{margin:0 14px 14px;width:auto}
+  .cmd-suggestions{margin:-10px 14px 14px}
+  .s1-sidebar{width:78vw}
+
+  /* Screen 2 */
+  .s2{padding:14px}
+  .s2-phone{width:100%;max-width:380px;border-radius:30px}
+
+  /* Screen 3 */
+  .s3-header{padding:12px 14px;flex-direction:column;align-items:stretch}
+  .s3-hright{flex-wrap:wrap}
+  .s3-search{width:100%}
+  .jessica-banner{padding:8px 14px;font-size:11px}
+  .s3-funnel-wrap{padding:12px 14px}
+  .funnel{flex-wrap:wrap;gap:10px}
+  .funnel-stage{min-width:calc(50% - 5px);flex:none}
+  .s3-body{padding:14px}
+  .s3-filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .s3-filter{flex-shrink:0}
+
+  /* Screen 4 */
+  .s4-header{padding:10px 14px;flex-wrap:wrap;gap:8px}
+  .s4-logo{font-size:13px}
+  .s4-steps{padding:9px 14px;overflow-x:auto}
+  .s4-step-name{display:none}
+  .s4-catalog{padding:14px}
+  .s4-products{grid-template-columns:repeat(2,1fr)}
+  .s4-cats{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
+  .s4-cat{flex-shrink:0}
+
+  /* Modals full width on mobile */
+  .compose-modal,.new-inv-modal{width:92vw;max-width:420px}
+  .modal-row{grid-template-columns:1fr}
+  .detail-panel{grid-template-columns:1fr;gap:14px}
+
+  /* Toast repositioned */
+  .toast{left:14px;right:14px;bottom:16px;max-width:none}
+}
+@media(max-width:400px){
+  .s4-products{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr}
+}
+
+
+/* NAV VIEW SWITCHING */
+.nav-view{display:none}
+.nav-view.active{display:block}
+.placeholder-view{padding:20px}
+.placeholder-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 24px;text-align:center;max-width:420px;margin:24px auto}
+.placeholder-icon{font-size:32px;margin-bottom:12px}
+.placeholder-title{font-size:15px;font-weight:700;margin-bottom:6px}
+.placeholder-desc{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.placeholder-btn{padding:8px 16px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-sm);font-size:12.5px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif}
+.sent-list,.sched-list{padding:0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.sent-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:13px 16px;display:flex;align-items:flex-start;gap:12px}
+.sent-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.sent-icon.email{background:var(--blue-l);color:var(--blue)}
+.sent-icon.crm{background:var(--green-l);color:var(--green)}
+.sent-icon.text{background:var(--gold-l);color:var(--gold)}
+.sent-icon.cal{background:var(--red-l);color:var(--red)}
+.sent-body{flex:1;min-width:0}
+.sent-title{font-size:13px;font-weight:600;margin-bottom:2px}
+.sent-desc{font-size:12px;color:var(--muted);line-height:1.5}
+.sent-time{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--dim);flex-shrink:0;white-space:nowrap}
+.dash-welcome{padding:20px 20px 4px}
+.dash-welcome-title{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;margin-bottom:4px}
+.dash-welcome-sub{font-size:13px;color:var(--muted)}
+.integration-list{padding:0 20px 20px;display:flex;flex-direction:column;gap:10px}
+.integration-row{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:13px 16px;display:flex;align-items:center;gap:12px}
+.integration-icon{width:36px;height:36px;border-radius:9px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.integration-info{flex:1}
+.integration-name{font-size:13px;font-weight:600}
+.integration-status{font-size:11.5px;color:var(--green);display:flex;align-items:center;gap:5px}
+.integration-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green)}
+.integration-toggle{width:38px;height:22px;border-radius:12px;background:var(--green);position:relative;cursor:pointer;flex-shrink:0}
+.integration-toggle::after{content:'';position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s}
+.integration-toggle.off{background:var(--border)}
+.integration-toggle.off::after{right:auto;left:2px}
+
+
+/* ══════════════════════════════════════════════════════════════
+   FULL DEMO ENHANCEMENTS
+══════════════════════════════════════════════════════════════ */
+
+/* 1. Voice replay simulation */
+.s2-replay-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:10px;margin-bottom:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);font-size:12.5px;font-weight:500;color:var(--text);cursor:pointer;font-family:'Geist',sans-serif;transition:all var(--t)}
+.s2-replay-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-l)}
+.s2-replay-btn:disabled{opacity:.5;cursor:not-allowed}
+.s2-replay-icon{font-size:13px}
+.s2-wave-wrap.recording{background:var(--blue-l)}
+.s2-wave-wrap.recording .wbar{background:linear-gradient(to top,var(--blue),#0d6ba8);animation-duration:.5s}
+.s2-entity{transition:opacity .3s ease,transform .3s ease}
+.s2-entity.pending{opacity:0;transform:translateY(4px)}
+.s2-conf-fill{transition:width .8s ease}
+
+/* 2. Command bar live filter */
+.cmd-suggestion.hidden{display:none}
+.cmd-no-match{padding:14px 15px;font-size:12px;color:var(--dim);text-align:center;display:none}
+.cmd-no-match.show{display:block}
+
+/* 4. Notification bell */
+.notif-wrap{position:relative;margin-left:8px}
+.notif-bell{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+.notif-bell:hover{border-color:var(--border2)}
+.notif-dot{position:absolute;top:6px;right:7px;width:7px;height:7px;border-radius:50%;background:var(--red);border:1.5px solid var(--surface)}
+.notif-dropdown{position:absolute;top:calc(100% + 8px);right:0;width:290px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-md);z-index:250;display:none;overflow:hidden}
+.notif-dropdown.open{display:block}
+.notif-head{padding:12px 15px;border-bottom:1px solid var(--border);font-size:12.5px;font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.notif-clear{font-size:11px;color:var(--blue);cursor:pointer;font-weight:500}
+.notif-list{max-height:280px;overflow-y:auto}
+.notif-item{padding:10px 15px;border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.notif-item:last-child{border-bottom:none}
+.notif-item-icon{font-size:12px;flex-shrink:0;margin-top:1px}
+.notif-item-text{flex:1;line-height:1.5}
+.notif-item-time{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--dim);flex-shrink:0}
+.notif-empty{padding:24px 15px;text-align:center;font-size:12px;color:var(--dim)}
+.cmd-bar-row{display:flex;align-items:center;gap:8px}
+.cmd-bar-row .cmd-bar{flex:1;margin-bottom:0}
+
+/* 5. Toast with undo */
+.toast{display:flex;align-items:center;gap:12px}
+.toast-undo{font-size:12px;font-weight:600;color:#7dd3fc;cursor:pointer;white-space:nowrap;flex-shrink:0;text-decoration:underline}
+
+/* 6. CRM bulk actions */
+.crm-checkbox-cell{width:34px}
+.crm-checkbox{width:15px;height:15px;cursor:pointer;accent-color:var(--blue)}
+.bulk-bar{position:sticky;top:0;z-index:20;background:var(--text);color:#fff;padding:10px 16px;border-radius:var(--r-md);display:none;align-items:center;gap:14px;margin-bottom:12px;font-size:12.5px;box-shadow:var(--shadow-md)}
+.bulk-bar.show{display:flex}
+.bulk-count{font-weight:600}
+.bulk-actions-row{display:flex;gap:8px;margin-left:auto}
+.bulk-btn{padding:6px 13px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:6px;font-size:12px;cursor:pointer;font-family:'Geist',sans-serif;transition:background var(--t)}
+.bulk-btn:hover{background:rgba(255,255,255,.22)}
+.bulk-btn.clear{background:transparent;border-color:transparent;color:rgba(255,255,255,.6)}
+
+/* 7. Timeline mini viz in detail panel */
+.detail-timeline{display:flex;align-items:center;gap:3px;margin-top:8px}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);position:relative}
+.tl-dot.active{background:var(--blue)}
+.tl-dot.done{background:var(--green)}
+.tl-line{flex:1;height:2px;background:var(--border)}
+.tl-line.done{background:var(--green);opacity:.4}
+
+/* 6b. Funnel clickable */
+.funnel-stage.active-filter .funnel-bar{filter:brightness(.85);box-shadow:0 0 0 2px var(--text)}
+.funnel-stage{position:relative}
+.funnel-clear{font-family:'DM Mono',monospace;font-size:9.5px;color:var(--blue);cursor:pointer;margin-left:8px}
+
+/* 8. Recent orders */
+.s4-tabs{display:flex;gap:4px;margin-bottom:16px;border-bottom:1px solid var(--border)}
+.s4-subtab{padding:8px 4px;font-size:12.5px;font-weight:500;color:var(--dim);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;font-family:'Geist',sans-serif;background:none;border-top:none;border-left:none;border-right:none}
+.s4-subtab.on{color:var(--text);border-bottom-color:var(--blue)}
+.recent-orders-view{display:none}
+.recent-orders-view.on{display:block}
+.recent-order-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:10px}
+.ro-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.ro-id{font-family:'DM Mono',monospace;font-size:11px;color:var(--dim)}
+.ro-status{font-family:'DM Mono',monospace;font-size:9.5px;padding:2px 8px;border-radius:4px;background:var(--green-l);color:var(--green);border:1px solid rgba(42,122,86,.2)}
+.ro-items{font-size:12.5px;color:var(--muted);margin-bottom:10px;line-height:1.6}
+.ro-bottom{display:flex;justify-content:space-between;align-items:center}
+.ro-total{font-weight:700;font-size:14px}
+.ro-reorder{padding:6px 14px;background:var(--green);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;font-family:'Geist',sans-serif}
+.ro-reorder:hover{background:#22664a}
+
+/* 9. Toast undo already covered above */
+
+/* 10. Dark mode */
+body.dark-mode{--bg:#141414;--surface:#1c1c1c;--surface2:#232323;--surface3:#282828;--border:#2e2e2e;--border2:#3a3a3a;--text:#f0efe9;--muted:#b0aca2;--dim:#6e6a60;--blue-l:#0f2a3a;--green-l:#0f2a1f;--red-l:#2e1416;--gold-l:#2e2410;--indigo-l:#161d38}
+body.dark-mode .crm-thead{background:#000}
+body.dark-mode .cbox.cr .cbody{background:#000}
+.dm-toggle-row{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);margin:0 20px 12px}
+.dm-toggle-label{font-size:13px;font-weight:600}
+.dm-toggle-desc{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* 12. Skeleton loading */
+.skeleton-overlay{position:absolute;inset:0;background:var(--bg);z-index:50;display:none;flex-direction:column;gap:12px;padding:20px}
+.skeleton-overlay.show{display:flex}
+.skel-block{background:linear-gradient(90deg,var(--border) 25%,var(--surface2) 50%,var(--border) 75%);background-size:200% 100%;animation:skel-shine 1.2s ease infinite;border-radius:var(--r-md)}
+@keyframes skel-shine{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.screen{position:relative}
+
+</style>
+</head>
+<body>
+
+<!-- CHROME -->
+<div class="chrome">
+  <span class="chrome-brand">Out<b>step</b> &nbsp;·&nbsp; UI Mockups</span>
+  <div class="tabs">
+    <button class="tab on" data-tab="0">Jessica Dashboard</button>
+    <button class="tab" data-tab="1">Voice Command</button>
+    <button class="tab" data-tab="2">Investor Pipeline</button>
+    <button class="tab" data-tab="3">Order Portal</button>
+  </div>
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  <span class="chrome-tag">Amir Baluch · June 2025</span>
+</div>
+<div class="mobile-tabs" id="mobileTabs">
+  <button class="mtab on" data-tab="0"><span class="mtab-icon">✅</span>Jessica Dashboard</button>
+  <button class="mtab" data-tab="1"><span class="mtab-icon">🎙</span>Voice Command</button>
+  <button class="mtab" data-tab="2"><span class="mtab-icon">👥</span>Investor Pipeline</button>
+  <button class="mtab" data-tab="3"><span class="mtab-icon">🛒</span>Order Portal</button>
+</div>
+
+<!-- ══ SCREEN 1: JESSICA DASHBOARD ═══════════════════════════════ -->
+<div class="screen s1 on">
+  <div class="skeleton-overlay" id="skel-0">
+    <div class="skel-block" style="height:40px;width:60%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+  </div>
+  <div class="s1-scrim" id="s1Scrim"></div>
+
+  <!-- LEFT SIDEBAR -->
+  <div class="s1-sidebar" id="s1Sidebar">
+    <button class="drawer-close" id="s1SidebarClose">×</button>
+    <div class="s1-logo-wrap">
+      <div class="s1-logo">
+        <div class="jpulse"></div>
+        <span class="s1-logo-name">Jessica</span>
+      </div>
+      <div class="s1-logo-status">Agent active</div>
+    </div>
+    <div class="s1-nav-group">
+      <span class="s1-nav-label">Workspace</span>
+      <div class="s1-nav-item" data-view="view-dashboard"><span class="s1-nav-icon">📊</span>Dashboard</div>
+      <div class="s1-nav-item on" data-view="view-pending-review"><span class="s1-nav-icon">✅</span>Pending Review<span class="s1-badge">4</span></div>
+      <div class="s1-nav-item" data-view="view-sent-today"><span class="s1-nav-icon">📤</span>Sent Today <span class="s1-badge gold">12</span></div>
+      <div class="s1-nav-item" data-view="view-scheduled"><span class="s1-nav-icon">📅</span>Scheduled</div>
+    </div>
+    <div class="s1-nav-group">
+      <span class="s1-nav-label">Investors</span>
+      <div class="s1-nav-item" data-goto-tab="2"><span class="s1-nav-icon">👥</span>Pipeline</div>
+      <div class="s1-nav-item" data-view="view-hot-leads"><span class="s1-nav-icon">⭐</span>Hot Leads</div>
+    </div>
+    <div class="s1-nav-group">
+      <span class="s1-nav-label">Knowledge</span>
+      <div class="s1-nav-item" data-view="view-docs"><span class="s1-nav-icon">📚</span>Docs + FAQs</div>
+      <div class="s1-nav-item" data-view="view-integrations"><span class="s1-nav-icon">🔗</span>Integrations</div>
+      <div class="s1-nav-item" data-view="view-settings"><span class="s1-nav-icon">⚙️</span>Settings</div>
+    </div>
+    <div class="s1-sidebar-footer">
+      <div class="s1-agent-status">
+        <div class="s1-agent-label">AI Agent Status</div>
+        <div class="s1-agent-row"><span>Actions today</span><span class="s1-agent-val">16</span></div>
+        <div class="s1-agent-row" style="margin-top:4px"><span>Avg confidence</span><span class="s1-agent-val">97%</span></div>
+        <div class="s1-agent-row" style="margin-top:4px"><span>Last run</span><span class="s1-agent-val">2m ago</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="s1-main">
+    <div class="s1-mobile-bar">
+      <button class="mobile-nav-btn" id="s1MenuBtn">☰ <span>Menu</span></button>
+      <button class="mobile-nav-btn" id="s1LogBtn">📋 <span>Activity Log</span></button>
+    </div>
+    <div class="s1-topbar">
+      <div class="cmd-bar-row">
+        <div class="cmd-bar">
+          <span class="cmd-mic">🎙</span>
+          <input id="cmdInput" class="cmd-input" placeholder="Tell Jessica to do something... or press ⌘K"/>
+          <span class="cmd-shortcut">⌘K</span>
+        </div>
+        <div class="notif-wrap">
+          <button class="notif-bell" id="notifBell">🔔<span class="notif-dot" id="notifDot"></span></button>
+          <div class="notif-dropdown" id="notifDropdown">
+            <div class="notif-head"><span>Notifications</span><span class="notif-clear" id="notifClear">Clear all</span></div>
+            <div class="notif-list" id="notifList">
+              <div class="notif-empty">No notifications yet. Actions you take will show up here.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cmd-suggestions" id="cmdSugg">
+        <div class="cmd-suggestion"><span class="cmd-suggestion-icon">✉</span>Email Dr. Martinez about his CPA meeting status</div>
+        <div class="cmd-suggestion"><span class="cmd-suggestion-icon">⬡</span>Update CRM — Dr. Kim confirmed interest at $75K</div>
+        <div class="cmd-suggestion"><span class="cmd-suggestion-icon">◷</span>Set a Sunday 8AM reminder to follow up with Dr. Patel</div>
+        <div class="cmd-suggestion"><span class="cmd-suggestion-icon">💬</span>Text all investors in CPA Review stage a check-in message</div>
+        <div class="cmd-no-match" id="cmdNoMatch">No matching suggestions — press Enter to send as a custom command</div>
+      </div>
+    </div>
+
+    <!-- VIEW: PENDING REVIEW (default) -->
+    <div class="nav-view active" id="view-pending-review">
+    <!-- KPIs -->
+    <div class="kpis">
+      <div class="kpi">
+        <div class="kpi-top">
+          <span class="kpi-label">Pending Review</span>
+          <svg class="kpi-sparkline" viewBox="0 0 70 24" width="70" height="24" fill="none">
+            <polyline points="0,20 12,16 24,19 36,11 48,14 60,7 70,9" stroke="#DA2638" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="kpi-val">4</div>
+        <div class="kpi-change up">↑ 2 since this morning</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">
+          <span class="kpi-label">Sent This Week</span>
+          <svg class="kpi-sparkline" viewBox="0 0 70 24" width="70" height="24" fill="none">
+            <polyline points="0,22 12,18 24,20 36,13 48,15 60,8 70,6" stroke="#2a7a56" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="kpi-val">12</div>
+        <div class="kpi-change up">↑ 4 vs last week</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-top">
+          <span class="kpi-label">Active Investors</span>
+          <svg class="kpi-sparkline" viewBox="0 0 70 24" width="70" height="24" fill="none">
+            <polyline points="0,18 12,16 24,14 36,13 48,11 60,10 70,8" stroke="#1D9DE4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="kpi-val">7</div>
+        <div class="kpi-change neutral">3 responded this week</div>
+      </div>
+    </div>
+
+    <!-- SECTION HEADER -->
+    <div class="sec-head">
+      <div class="sec-head-left">
+        <span class="sec-title">Pending Review</span>
+        <span class="sec-count">4</span>
+      </div>
+      <a class="sec-link">View all →</a>
+    </div>
+
+    <!-- ACTION CARDS -->
+    <div class="acards">
+      <div class="acard">
+        <div class="acard-header">
+          <div class="acard-left">
+            <span class="atype atype-email">EMAIL</span>
+            <span class="acard-contact">Dr. Carlos Martinez</span>
+            <span class="acard-deal">$50K</span>
+          </div>
+          <span class="acard-time">2 min ago</span>
+        </div>
+        <div class="acard-body">
+          <div class="acard-preview">
+            <div class="acard-preview-line"><b>To:</b> dr.martinez@gmail.com &nbsp;·&nbsp; <b>Subject:</b> Following up — great connecting today</div>
+            <div class="acard-preview-line">Hi Dr. Martinez, it was great speaking with you today. I wanted to follow up on our conversation about the $50K position. Once you have spoken with your CPA, I am happy to walk through the structure...</div>
+          </div>
+          <div class="acard-actions">
+            <button class="btn btn-approve">✓ Approve</button>
+            <button class="btn btn-edit">Edit</button>
+            <button class="btn btn-undo">Undo</button>
+            <button class="btn btn-all">Approve All 4</button>
+          </div>
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-header">
+          <div class="acard-left">
+            <span class="atype atype-crm">CRM UPDATE</span>
+            <span class="acard-contact">Dr. Carlos Martinez</span>
+            <span class="acard-deal">$50K</span>
+          </div>
+          <span class="acard-time">2 min ago</span>
+        </div>
+        <div class="acard-body">
+          <div class="acard-preview">
+            <div class="acard-preview-line"><b>Stage:</b> Interested → CPA Review &nbsp;·&nbsp; <b>Amount:</b> $50,000 &nbsp;·&nbsp; <b>Next:</b> Sunday check-in</div>
+            <div class="acard-preview-line"><b>Note added:</b> Needs CPA confirmation before committing. Willing if tax structure works.</div>
+          </div>
+          <div class="acard-actions"><button class="btn btn-approve">✓ Approve</button><button class="btn btn-edit">Edit</button><button class="btn btn-undo">Undo</button></div>
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-header">
+          <div class="acard-left">
+            <span class="atype atype-cal">CALENDAR</span>
+            <span class="acard-contact">Sunday Reminder</span>
+          </div>
+          <span class="acard-time">2 min ago</span>
+        </div>
+        <div class="acard-body">
+          <div class="acard-preview">
+            <div class="acard-preview-line"><b>Sunday June 29 · 6:00 AM</b> — Check in with Dr. Martinez</div>
+            <div class="acard-preview-line">Send follow-up text: is he ready to move forward this week?</div>
+          </div>
+          <div class="acard-actions"><button class="btn btn-approve">✓ Approve</button><button class="btn btn-edit">Edit</button><button class="btn btn-undo">Undo</button></div>
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-header">
+          <div class="acard-left">
+            <span class="atype atype-text">GHL TEXT</span>
+            <span class="acard-contact">Dr. Carlos Martinez</span>
+            <span class="acard-deal">$50K</span>
+          </div>
+          <span class="acard-time">Scheduled · Sun 6AM</span>
+        </div>
+        <div class="acard-body">
+          <div class="acard-preview">
+            <div class="acard-preview-line"><b>From:</b> +1 (214) 555-0190 · Your GHL number</div>
+            <div class="acard-preview-line">Hey Dr. Martinez, just checking in. Any questions I can help answer before your CPA conversation?</div>
+          </div>
+          <div class="acard-actions"><button class="btn btn-approve">✓ Approve</button><button class="btn btn-edit">Edit</button><button class="btn btn-undo">Undo</button></div>
+        </div>
+      </div>
+    </div>
+    </div><!-- /view-pending-review -->
+
+    <!-- VIEW: DASHBOARD (overview) -->
+    <div class="nav-view" id="view-dashboard">
+      <div class="dash-welcome">
+        <div class="dash-welcome-title">Good afternoon, Amir.</div>
+        <div class="dash-welcome-sub">Here's how Jessica is running things across your investor pipeline today.</div>
+      </div>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpi-top"><span class="kpi-label">Total Pipeline</span></div>
+          <div class="kpi-val">$725K</div>
+          <div class="kpi-change up">↑ $60K this week</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-top"><span class="kpi-label">Committed</span></div>
+          <div class="kpi-val">4</div>
+          <div class="kpi-change up">$290K closed</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-top"><span class="kpi-label">Avg Response Time</span></div>
+          <div class="kpi-val">11m</div>
+          <div class="kpi-change neutral">Down from 2.3 hrs pre-Jessica</div>
+        </div>
+      </div>
+      <div class="sec-head"><div class="sec-head-left"><span class="sec-title">This week at a glance</span></div></div>
+      <div class="sent-list">
+        <div class="sent-card"><div class="sent-icon crm">⬡</div><div class="sent-body"><div class="sent-title">4 investors moved forward a stage</div><div class="sent-desc">Nguyen and Brooks committed · Reyes and Chen progressed to Interested</div></div></div>
+        <div class="sent-card"><div class="sent-icon email">✉</div><div class="sent-body"><div class="sent-title">12 emails sent, 0 missed follow-ups</div><div class="sent-desc">Every investor touchpoint replied to within same business day</div></div></div>
+        <div class="sent-card"><div class="sent-icon text">💬</div><div class="sent-body"><div class="sent-title">6 texts handled via GoHighLevel</div><div class="sent-desc">Including 2 real-time back-and-forth conversations</div></div></div>
+      </div>
+    </div><!-- /view-dashboard -->
+
+    <!-- VIEW: SENT TODAY -->
+    <div class="nav-view" id="view-sent-today">
+      <div class="sec-head" style="padding-top:20px"><div class="sec-head-left"><span class="sec-title">Sent Today</span><span class="sec-count">12</span></div></div>
+      <div class="sent-list">
+        <div class="sent-card"><div class="sent-icon email">✉</div><div class="sent-body"><div class="sent-title">Email to Dr. Kim</div><div class="sent-desc">Sent investment deck as requested</div></div><span class="sent-time">3 hrs ago</span></div>
+        <div class="sent-card"><div class="sent-icon crm">⬡</div><div class="sent-body"><div class="sent-title">CRM: Dr. Nguyen → Committed</div><div class="sent-desc">$100K · Wire instructions sent</div></div><span class="sent-time">1 hr ago</span></div>
+        <div class="sent-card"><div class="sent-icon text">💬</div><div class="sent-body"><div class="sent-title">Text: Dr. Okafor check-in</div><div class="sent-desc">Replied — docs sent to his attorney</div></div><span class="sent-time">5 hrs ago</span></div>
+        <div class="sent-card"><div class="sent-icon text">💬</div><div class="sent-body"><div class="sent-title">Text: Dr. Reyes CPA intro</div><div class="sent-desc">Connected her with Sharma &amp; Co</div></div><span class="sent-time">6 hrs ago</span></div>
+        <div class="sent-card"><div class="sent-icon email">✉</div><div class="sent-body"><div class="sent-title">Email to Dr. Wu</div><div class="sent-desc">Follow-up deck after intro call</div></div><span class="sent-time">7 hrs ago</span></div>
+        <div class="sent-card"><div class="sent-icon cal">◷</div><div class="sent-body"><div class="sent-title">Reminder fired: Dr. Patel follow-up</div><div class="sent-desc">9AM check-in, email sent automatically</div></div><span class="sent-time">Yesterday</span></div>
+      </div>
+    </div><!-- /view-sent-today -->
+
+    <!-- VIEW: SCHEDULED -->
+    <div class="nav-view" id="view-scheduled">
+      <div class="sec-head" style="padding-top:20px"><div class="sec-head-left"><span class="sec-title">Scheduled</span><span class="sec-count">5</span></div></div>
+      <div class="sched-list">
+        <div class="sent-card"><div class="sent-icon text">💬</div><div class="sent-body"><div class="sent-title">Text to Dr. Martinez</div><div class="sent-desc">Sunday June 29 · 6:00 AM · Check in on CPA conversation</div></div></div>
+        <div class="sent-card"><div class="sent-icon email">✉</div><div class="sent-body"><div class="sent-title">Email: Dr. Patel deck follow-up</div><div class="sent-desc">Monday June 30 · 9:00 AM · Auto-scheduled by Jessica</div></div></div>
+        <div class="sent-card"><div class="sent-icon email">✉</div><div class="sent-body"><div class="sent-title">Email: Dr. Wu second touch</div><div class="sent-desc">Tuesday July 1 · 10:00 AM · If no reply by then</div></div></div>
+        <div class="sent-card"><div class="sent-icon crm">⬡</div><div class="sent-body"><div class="sent-title">CRM check: stale leads review</div><div class="sent-desc">Wednesday July 2 · Weekly automated sweep</div></div></div>
+        <div class="sent-card"><div class="sent-icon text">💬</div><div class="sent-body"><div class="sent-title">Text: Dr. Chen re-engagement</div><div class="sent-desc">Thursday July 3 · Cold lead nudge</div></div></div>
+      </div>
+    </div><!-- /view-scheduled -->
+
+    <!-- VIEW: HOT LEADS -->
+    <div class="nav-view" id="view-hot-leads">
+      <div class="sec-head" style="padding-top:20px"><div class="sec-head-left"><span class="sec-title">Hot Leads</span><span class="sec-count">4</span></div></div>
+      <div class="sent-list">
+        <div class="sent-card"><div class="sent-icon crm">⬡</div><div class="sent-body"><div class="sent-title">Dr. Robert Okafor — $130,000</div><div class="sent-desc">Committed · Docs with attorney, largest single commitment</div></div></div>
+        <div class="sent-card"><div class="sent-icon crm">⬡</div><div class="sent-body"><div class="sent-title">Dr. James Nguyen — $100,000</div><div class="sent-desc">Committed · Wire instructions sent today</div></div></div>
+        <div class="sent-card"><div class="sent-icon crm">⬡</div><div class="sent-body"><div class="sent-title">Dr. Linda Brooks — $60,000</div><div class="sent-desc">Committed · Fastest close this month, one week start to finish</div></div></div>
+        <div class="sent-card"><div class="sent-icon cal">◷</div><div class="sent-body"><div class="sent-title">Dr. Carlos Martinez — $50,000</div><div class="sent-desc">CPA Review · Sunday 6AM check-in scheduled</div></div></div>
+      </div>
+      <div style="padding:0 20px"><button class="placeholder-btn" id="hotLeadsToCrm">Open Full Pipeline →</button></div>
+    </div><!-- /view-hot-leads -->
+
+    <!-- VIEW: DOCS + FAQS -->
+    <div class="nav-view placeholder-view" id="view-docs">
+      <div class="placeholder-card">
+        <div class="placeholder-icon">📚</div>
+        <div class="placeholder-title">Knowledge Base</div>
+        <div class="placeholder-desc">Jessica references these documents on every draft: your operating agreements, investor FAQs, deal terms, and tax benefit sheets. 6 documents uploaded, last synced 2 hours ago.</div>
+        <button class="placeholder-btn">Upload a Document</button>
+      </div>
+    </div><!-- /view-docs -->
+
+    <!-- VIEW: INTEGRATIONS -->
+    <div class="nav-view" id="view-integrations">
+      <div class="sec-head" style="padding-top:20px"><div class="sec-head-left"><span class="sec-title">Connected Integrations</span></div></div>
+      <div class="integration-list">
+        <div class="integration-row"><div class="integration-icon">✉</div><div class="integration-info"><div class="integration-name">Gmail</div><div class="integration-status">Connected · jessica@baluchcapital.com</div></div><div class="integration-toggle"></div></div>
+        <div class="integration-row"><div class="integration-icon">💬</div><div class="integration-info"><div class="integration-name">GoHighLevel</div><div class="integration-status">Connected · +1 (214) 555-0190</div></div><div class="integration-toggle"></div></div>
+        <div class="integration-row"><div class="integration-icon">📊</div><div class="integration-info"><div class="integration-name">Google Sheets</div><div class="integration-status">Connected · Investor Pipeline sheet</div></div><div class="integration-toggle"></div></div>
+        <div class="integration-row"><div class="integration-icon">📅</div><div class="integration-info"><div class="integration-name">Google Calendar</div><div class="integration-status">Connected · Reminders + scheduling</div></div><div class="integration-toggle"></div></div>
+      </div>
+    </div><!-- /view-integrations -->
+
+    <!-- VIEW: SETTINGS -->
+    <div class="nav-view" id="view-settings">
+      <div class="sec-head" style="padding-top:20px"><div class="sec-head-left"><span class="sec-title">Agent Settings</span></div></div>
+      <div class="dm-toggle-row">
+        <div>
+          <div class="dm-toggle-label">Dark mode</div>
+          <div class="dm-toggle-desc">Switch the whole interface to a dark theme</div>
+        </div>
+        <div class="integration-toggle off" id="darkModeToggle"></div>
+      </div>
+      <div class="dm-toggle-row">
+        <div>
+          <div class="dm-toggle-label">Require approval before sending</div>
+          <div class="dm-toggle-desc">Jessica drafts, you approve. Turn off to let high-confidence actions auto-send.</div>
+        </div>
+        <div class="integration-toggle" id="approvalToggle"></div>
+      </div>
+      <div class="dm-toggle-row">
+        <div>
+          <div class="dm-toggle-label">Confidence threshold</div>
+          <div class="dm-toggle-desc">Below 90%, Jessica will always ask for clarification first</div>
+        </div>
+        <div class="integration-toggle" id="confToggle"></div>
+      </div>
+      <div class="placeholder-card" style="margin-top:8px">
+        <div class="placeholder-icon">⚙️</div>
+        <div class="placeholder-title">More settings coming</div>
+        <div class="placeholder-desc">Working hours, escalation rules, and per-investor notification preferences.</div>
+      </div>
+    </div><!-- /view-settings -->
+
+  </div>
+
+  <!-- RIGHT PANEL: ACTIVITY LOG -->
+  <div class="s1-right" id="s1Right">
+    <div class="s1-right-head">
+      <button class="drawer-close" id="s1RightClose">×</button>
+      <span class="s1-right-title">Today's Log</span>
+      <span class="s1-right-date">Mon Jun 23</span>
+    </div>
+    <div class="s1-right-body">
+      <div class="log-label">Recent Activity</div>
+      <div class="log-items">
+        <div class="log-item"><div class="log-dot email">✉</div><div class="log-content"><div class="log-time">2 min ago</div><div class="log-action">Email drafted to Dr. Martinez</div><div class="log-detail">Subject: Following up — great connecting today</div><div class="log-status pending">⏳ Awaiting approval</div></div></div>
+        <div class="log-item"><div class="log-dot crm">⬡</div><div class="log-content"><div class="log-time">1 hr ago</div><div class="log-action">CRM: Dr. Nguyen → Committed</div><div class="log-detail">$100K · Wire instructions sent</div><div class="log-status approved">✓ Approved</div></div></div>
+        <div class="log-item"><div class="log-dot email">✉</div><div class="log-content"><div class="log-time">3 hrs ago</div><div class="log-action">Email to Dr. Kim</div><div class="log-detail">Sent investment deck as requested</div><div class="log-status approved">✓ Approved</div></div></div>
+        <div class="log-item"><div class="log-dot text">💬</div><div class="log-content"><div class="log-time">5 hrs ago</div><div class="log-action">Text: Dr. Okafor check-in</div><div class="log-detail">Replied — docs sent to his attorney</div><div class="log-status approved">✓ Approved</div></div></div>
+        <div class="log-item"><div class="log-dot cal">◷</div><div class="log-content"><div class="log-time">Yesterday</div><div class="log-action">Reminder: Dr. Patel follow-up</div><div class="log-detail">Fired at 9AM, email sent ✓</div><div class="log-status approved">✓ Completed</div></div></div>
+        <div class="log-item"><div class="log-dot crm">⬡</div><div class="log-content"><div class="log-time">Yesterday</div><div class="log-action">CRM: Dr. Brooks → Committed</div><div class="log-detail">$60K · Fastest close this month</div><div class="log-status approved">✓ Approved</div></div></div>
+        <div class="log-item"><div class="log-dot text">💬</div><div class="log-content"><div class="log-time">2 days ago</div><div class="log-action">Text: Dr. Reyes CPA intro</div><div class="log-detail">Connected her with Sharma & Co</div><div class="log-status approved">✓ Approved</div></div></div>
+      </div>
+      <div class="coming-up-section">
+        <div class="log-label">Coming Up</div>
+        <div class="cup-item"><div class="cup-time">Sun Jun 29 · 6:00 AM</div><div class="cup-action">Text to Dr. Martinez</div><div class="cup-contact">Check in on CPA conversation</div><div class="cup-tag">PENDING APPROVAL</div></div>
+        <div class="cup-item"><div class="cup-time">Mon Jun 30 · 9:00 AM</div><div class="cup-action">Email: Dr. Patel deck follow-up</div><div class="cup-contact">Auto-scheduled by Jessica</div><div class="cup-tag">SCHEDULED</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCREEN 2: VOICE COMMAND ═══════════════════════════════════ -->
+<div class="screen s2">
+  <div class="skeleton-overlay" id="skel-1">
+    <div class="skel-block" style="height:40px;width:60%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+  </div>
+  <div class="s2-phone">
+    <div class="s2-notch">
+      <span class="s2-notch-time">9:41</span>
+      <span class="s2-notch-icons">▲▲▲ 🔋</span>
+    </div>
+    <div class="s2-content">
+      <div class="s2-app-header">
+        <div class="s2-app-logo">
+          <div class="jpulse"></div>
+          <span class="s2-app-name">Jessica</span>
+          <span class="s2-app-sub">Active</span>
+        </div>
+        <span class="s2-gear">⚙</span>
+      </div>
+
+      <button class="s2-replay-btn" id="s2ReplayBtn"><span class="s2-replay-icon">🎤</span> Tap to Simulate Voice Command</button>
+
+      <div class="s2-wave-wrap" id="s2Wave">
+        <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+        <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+        <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+        <div class="wbar"></div><div class="wbar"></div><div class="wbar"></div>
+      </div>
+
+      <div class="s2-transcript" id="s2Transcript" data-full="Jessica, I just got off a call with Dr. Martinez. He wants to invest $50K but needs to talk to his CPA first. Email him a follow-up, update my CRM, and set a reminder for Sunday at 6AM.">
+        "Jessica, I just got off a call with Dr. Martinez. He wants to invest $50K but needs to talk to his CPA first. Email him a follow-up, update my CRM, and set a reminder for Sunday at 6AM."<span class="s2-cursor" id="s2Cursor"></span>
+      </div>
+
+      <div class="s2-entities" id="s2Entities">
+        <span class="s2-entity-label">Detected</span>
+        <span class="s2-entity person">👤 Dr. Martinez</span>
+        <span class="s2-entity amount">💰 $50,000</span>
+        <span class="s2-entity date">📅 Sunday 6AM</span>
+        <span class="s2-entity action">⬡ CRM update</span>
+        <span class="s2-entity action">✉ Email</span>
+      </div>
+
+      <div class="s2-confidence">
+        <span>Confidence</span>
+        <div class="s2-conf-bar"><div class="s2-conf-fill" id="s2ConfFill"></div></div>
+        <span class="s2-conf-val" id="s2ConfVal">97%</span>
+      </div>
+
+      <div class="s2-actions" id="s2Actions">
+        <div class="s2-action done" data-icon="✉" data-text="Drafting email to Dr. Martinez">
+          <span class="s2-action-icon">✉</span>
+          <span class="s2-action-text">Drafting email to Dr. Martinez</span>
+          <div class="s2-action-right">
+            <span class="s2-action-status done">Done ✓</span>
+            <div class="s2-action-prog"><div class="s2-action-prog-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+        <div class="s2-action done" data-icon="⬡" data-text="Updating CRM — $50K, CPA Review stage">
+          <span class="s2-action-icon">⬡</span>
+          <span class="s2-action-text">Updating CRM — $50K, CPA Review stage</span>
+          <div class="s2-action-right">
+            <span class="s2-action-status done">Done ✓</span>
+            <div class="s2-action-prog"><div class="s2-action-prog-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+        <div class="s2-action done" data-icon="◷" data-text="Calendar reminder — Sunday 6:00 AM">
+          <span class="s2-action-icon">◷</span>
+          <span class="s2-action-text">Calendar reminder — Sunday 6:00 AM</span>
+          <div class="s2-action-right">
+            <span class="s2-action-status done">Done ✓</span>
+            <div class="s2-action-prog"><div class="s2-action-prog-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+        <div class="s2-action done" data-icon="💬" data-text="GHL text queued for Sunday 6AM">
+          <span class="s2-action-icon">💬</span>
+          <span class="s2-action-text">GHL text queued for Sunday 6AM</span>
+          <div class="s2-action-right">
+            <span class="s2-action-status done">Done ✓</span>
+            <div class="s2-action-prog"><div class="s2-action-prog-fill" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="s2-review-btn" id="s2ReviewBtn">Review 4 Actions →</button>
+    </div>
+    <div class="s2-home-ind"><div class="s2-home-bar"></div></div>
+  </div>
+</div>
+
+<!-- ══ SCREEN 3: INVESTOR PIPELINE ═══════════════════════════════ -->
+<div class="screen s3">
+  <div class="skeleton-overlay" id="skel-2">
+    <div class="skel-block" style="height:40px;width:60%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+  </div>
+  <div class="s3-header">
+    <div class="s3-title">Investor Pipeline <span class="s3-title-count">9 active</span></div>
+    <div class="s3-hright">
+      <input class="s3-search" placeholder="Search investors..." />
+      <button class="s3-fbtn">Stage ▾</button>
+      <button class="s3-fbtn">Amount ▾</button>
+      <button class="s3-new">+ New Investor</button>
+    </div>
+  </div>
+
+  <div class="jessica-banner">
+    <span class="jdot"></span>
+    <span><b>Jessica updated 3 records today</b> &nbsp;·&nbsp; Dr. Martinez → CPA Review &nbsp;·&nbsp; Dr. Kim follow-up sent &nbsp;·&nbsp; Dr. Nguyen marked Committed</span>
+  </div>
+
+  <!-- PIPELINE FUNNEL -->
+  <div class="s3-funnel-wrap">
+    <div class="s3-funnel-label">Pipeline by stage</div>
+    <div class="funnel">
+      <div class="funnel-stage" data-stage-filter="">
+        <div class="funnel-top"><span class="funnel-name">Lead</span><span class="funnel-cnt">14</span></div>
+        <div class="funnel-bar" style="background:#e4e1d9;width:100%"></div>
+        <div class="funnel-val">$0</div>
+      </div>
+      <div class="funnel-stage" data-stage-filter="s-intro">
+        <div class="funnel-top"><span class="funnel-name">Intro Done</span><span class="funnel-cnt">9</span></div>
+        <div class="funnel-bar" style="background:var(--blue-l);border:1px solid rgba(29,157,228,.2);width:100%"></div>
+        <div class="funnel-val">$195K</div>
+      </div>
+      <div class="funnel-stage" data-stage-filter="s-interested">
+        <div class="funnel-top"><span class="funnel-name">Interested</span><span class="funnel-cnt">6</span></div>
+        <div class="funnel-bar" style="background:var(--indigo-l);border:1px solid rgba(59,95,212,.2);width:100%"></div>
+        <div class="funnel-val">$165K</div>
+      </div>
+      <div class="funnel-stage" data-stage-filter="s-cpa">
+        <div class="funnel-top"><span class="funnel-name">CPA Review</span><span class="funnel-cnt">2</span></div>
+        <div class="funnel-bar" style="background:var(--gold-l);border:1px solid rgba(176,120,0,.2);width:100%"></div>
+        <div class="funnel-val">$75K</div>
+      </div>
+      <div class="funnel-stage" data-stage-filter="s-committed">
+        <div class="funnel-top"><span class="funnel-name">Committed</span><span class="funnel-cnt">4</span></div>
+        <div class="funnel-bar" style="background:var(--green-l);border:1px solid rgba(42,122,86,.2);width:100%"></div>
+        <div class="funnel-val">$290K</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s3-body">
+    <!-- SMART FILTERS -->
+    <div class="s3-filters">
+      <button class="s3-filter on">All <span class="s3-filter-cnt">9</span></button>
+      <button class="s3-filter">Hot Leads <span class="s3-filter-cnt">4</span></button>
+      <button class="s3-filter">Needs Follow-up <span class="s3-filter-cnt">4</span></button>
+      <button class="s3-filter">AI Managed <span class="s3-filter-cnt">6</span></button>
+      <button class="s3-filter">This Week <span class="s3-filter-cnt">8</span></button>
+      <span class="funnel-clear" id="funnelClearBtn" style="display:none">✕ Clear stage filter</span>
+    </div>
+
+    <div class="bulk-bar" id="bulkBar">
+      <span class="bulk-count"><span id="bulkCount">0</span> selected</span>
+      <div class="bulk-actions-row">
+        <button class="bulk-btn" id="bulkEmailBtn">✉ Email Selected</button>
+        <button class="bulk-btn" id="bulkTextBtn">💬 Text Selected</button>
+        <button class="bulk-btn clear" id="bulkClearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div class="crm-table-scroll">
+    <table class="crm-table">
+      <thead class="crm-thead">
+        <tr>
+          <th class="crm-th crm-checkbox-cell"><input type="checkbox" class="crm-checkbox" id="crmSelectAll"></th>
+          <th class="crm-th">Contact</th>
+          <th class="crm-th sort">Deal Size</th>
+          <th class="crm-th sort">Stage</th>
+          <th class="crm-th sort">Last Contact</th>
+          <th class="crm-th">Next Action</th>
+          <th class="crm-th">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="crm-tr" data-id="0">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="0"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#edf5f1;color:#2a7a56">JN</div><div><div class="contact-name">Dr. James Nguyen</div><div class="contact-company">Houston Surgical Group</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$100,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:77%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-committed">Committed</span></td>
+          <td class="crm-td"><div class="crm-time">Today 10:30 AM</div></td>
+          <td class="crm-td"><div class="crm-time">Send wire instructions</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-0">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (713) 555-0123</div>
+        <div class="detail-entry"><span>Email</span>j.nguyen@houstonsurgical.com</div>
+        <div class="detail-entry"><span>Deal</span>$100,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Bonus depreciation · Year 1</div>
+        <div class="detail-entry"><span>CPA</span>CPA: Robert Lin, Houston</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Ready to wire by end of month. Waiting on final operating agreement.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro call Jun 10 · Follow-up Jun 17 · Committed Jun 20</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. James Nguyen" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. James Nguyen" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+        <tr class="crm-tr" data-id="1">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="1"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#fffbe8;color:#b07800">CM</div><div><div class="contact-name">Dr. Carlos Martinez</div><div class="contact-company">Private Practice, Dallas</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$50,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:38%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-cpa">CPA Review</span></td>
+          <td class="crm-td"><div class="crm-time">2 hours ago</div><div class="ai-tag">⚡ Jessica</div></td>
+          <td class="crm-td"><div class="crm-time">☀️ Sun 6AM check-in</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button><button class="crm-btn">Text</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-1">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (972) 555-0187</div>
+        <div class="detail-entry"><span>Email</span>dr.martinez@gmail.com</div>
+        <div class="detail-entry"><span>Deal</span>$50,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Bonus depreciation · Year 1</div>
+        <div class="detail-entry"><span>CPA</span>CPA: Maria Santos, Dallas</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">CPA meeting scheduled for Thursday. Very positive about tax benefit angle.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro call Jun 18 · Follow-up Jun 21 · CPA referral Jun 23</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line"></div><div class="tl-dot active"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Carlos Martinez" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Carlos Martinez" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+        <tr class="crm-tr" data-id="2">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="2"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#fdf0f1;color:#DA2638">RO</div><div><div class="contact-name">Dr. Robert Okafor</div><div class="contact-company">Fort Worth Cardiology</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$130,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:100%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-committed">Committed</span></td>
+          <td class="crm-td"><div class="crm-time">Last week</div></td>
+          <td class="crm-td"><div class="crm-time">Docs to attorney</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-2">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (817) 555-0094</div>
+        <div class="detail-entry"><span>Email</span>r.okafor@fwcardiology.com</div>
+        <div class="detail-entry"><span>Deal</span>$130,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Bonus depreciation · Year 1</div>
+        <div class="detail-entry"><span>CPA</span>CPA: David Park, Fort Worth</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Largest single commitment. Docs sent to attorney for review.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro May 28 · Interested Jun 5 · Committed Jun 12</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Robert Okafor" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Robert Okafor" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+        <tr class="crm-tr" data-id="3">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="3"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#eef1fc;color:#3b5fd4">PP</div><div><div class="contact-name">Dr. Priya Patel</div><div class="contact-company">Dallas Medical Partners</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$75,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:57%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-interested">Interested</span></td>
+          <td class="crm-td"><div class="crm-time">Yesterday</div><div class="ai-tag">⚡ Jessica</div></td>
+          <td class="crm-td"><div class="crm-time">Send investment deck</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button><button class="crm-btn">Text</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-3">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (214) 555-0231</div>
+        <div class="detail-entry"><span>Email</span>p.patel@dallasmedical.com</div>
+        <div class="detail-entry"><span>Deal</span>$75,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Exploring Year 1 vs 5-year spread</div>
+        <div class="detail-entry"><span>CPA</span>CPA: Anita Sharma, Plano</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Sent deck today. Very interested in the GLP-1 equipment angle.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro Jun 19 · Follow-up Jun 22 · Deck sent Jun 23</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line"></div><div class="tl-dot active"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Priya Patel" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Priya Patel" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+        <tr class="crm-tr" data-id="4">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="4"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#e8f5fd;color:#1D9DE4">MK</div><div><div class="contact-name">Dr. Michael Kim</div><div class="contact-company">North Texas Ortho</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$25,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:19%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-intro">Intro Done</span></td>
+          <td class="crm-td"><div class="crm-time">3 days ago</div><div class="ai-tag">⚡ Jessica</div></td>
+          <td class="crm-td"><div class="crm-time">Follow-up queued</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-4">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (214) 555-0088</div>
+        <div class="detail-entry"><span>Email</span>m.kim@northtexasortho.com</div>
+        <div class="detail-entry"><span>Deal</span>$25,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Year 1 bonus depreciation</div>
+        <div class="detail-entry"><span>CPA</span>TBD — referred to Sharma & Co</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Intro call went well. Needs intro to a CPA before deciding.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro Jun 20 · Follow-up pending</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line"></div><div class="tl-dot active"></div><div class="tl-line"></div><div class="tl-dot"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Michael Kim" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Michael Kim" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+        <tr class="crm-tr" data-id="5">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="5"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#f5f4f0;color:#5c5c5c">SC</div><div><div class="contact-name">Dr. Sarah Chen</div><div class="contact-company">Plano Dermatology</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$50,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:38%;opacity:.3"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-cold">Cold</span></td>
+          <td class="crm-td"><div class="crm-time">2 weeks ago</div></td>
+          <td class="crm-td"><div class="crm-time">Re-engagement email</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-5">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (972) 555-0319</div>
+        <div class="detail-entry"><span>Email</span>s.chen@planoderm.com</div>
+        <div class="detail-entry"><span>Deal</span>$50,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Unknown — no CPA contact yet</div>
+        <div class="detail-entry"><span>CPA</span>No CPA provided</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Went cold after initial deck. Re-engagement email scheduled.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro Jun 2 · No response since Jun 9</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line"></div><div class="tl-dot active"></div><div class="tl-line"></div><div class="tl-dot"></div><div class="tl-line"></div><div class="tl-dot"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Sarah Chen" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Sarah Chen" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+<tr class="crm-tr" data-id="6">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="6"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#eef1fc;color:#3b5fd4">AR</div><div><div class="contact-name">Dr. Amanda Reyes</div><div class="contact-company">Frisco Family Medicine</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$40,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:31%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-interested">Interested</span></td>
+          <td class="crm-td"><div class="crm-time">4 days ago</div><div class="ai-tag">⚡ Jessica</div></td>
+          <td class="crm-td"><div class="crm-time">Awaiting CPA intro</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button><button class="crm-btn">Text</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-6">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (469) 555-0271</div>
+        <div class="detail-entry"><span>Email</span>a.reyes@friscofm.com</div>
+        <div class="detail-entry"><span>Deal</span>$40,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Exploring Year 1 bonus depreciation</div>
+        <div class="detail-entry"><span>CPA</span>Requested intro to Sharma &amp; Co</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Very engaged on the call. Wants a CPA intro before committing to an amount.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro Jun 17 · Follow-up Jun 19 · Interested Jun 20</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line"></div><div class="tl-dot active"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Amanda Reyes" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Amanda Reyes" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+<tr class="crm-tr" data-id="7">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="7"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#fdf0f1;color:#DA2638">TW</div><div><div class="contact-name">Dr. Thomas Wu</div><div class="contact-company">Arlington Urgent Care</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$20,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:15%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-intro">Intro Done</span></td>
+          <td class="crm-td"><div class="crm-time">6 days ago</div></td>
+          <td class="crm-td"><div class="crm-time">Send follow-up deck</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-7">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (817) 555-0402</div>
+        <div class="detail-entry"><span>Email</span>t.wu@arlingtonuc.com</div>
+        <div class="detail-entry"><span>Deal</span>$20,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Not yet discussed</div>
+        <div class="detail-entry"><span>CPA</span>No CPA provided</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Short intro call, needs more detail before deciding. Send the deck this week.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro Jun 17 · No follow-up yet</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line"></div><div class="tl-dot active"></div><div class="tl-line"></div><div class="tl-dot"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Thomas Wu" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Thomas Wu" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+<tr class="crm-tr" data-id="8">
+          <td class="crm-td crm-checkbox-cell"><input type="checkbox" class="crm-checkbox row-check" data-row="8"></td>
+          <td class="crm-td"><div class="contact-cell"><div class="avatar" style="background:#edf5f1;color:#2a7a56">LB</div><div><div class="contact-name">Dr. Linda Brooks</div><div class="contact-company">Southlake Aesthetics MD</div></div></div></td>
+          <td class="crm-td"><div class="deal-cell"><span class="deal-amt">$60,000</span><div class="deal-bar-wrap"><div class="deal-bar-fill" style="width:46%"></div></div></div></td>
+          <td class="crm-td"><span class="sbadge s-committed">Committed</span></td>
+          <td class="crm-td"><div class="crm-time">2 days ago</div><div class="ai-tag">⚡ Jessica</div></td>
+          <td class="crm-td"><div class="crm-time">Wire instructions sent</div></td>
+          <td class="crm-td"><div class="crm-actions"><button class="crm-btn">Edit</button><button class="crm-btn">Email</button></div></td>
+        </tr>
+<tr class="crm-detail-row" id="detail-8">
+  <td colspan="7">
+    <div class="detail-panel">
+      <div>
+        <div class="detail-sec-label">Contact Info</div>
+        <div class="detail-entry"><span>Phone</span>+1 (682) 555-0156</div>
+        <div class="detail-entry"><span>Email</span>l.brooks@southlakemd.com</div>
+        <div class="detail-entry"><span>Deal</span>$60,000 · Medical Equipment Fund III</div>
+        <div class="detail-entry"><span>Structure</span>Bonus depreciation · Year 1</div>
+        <div class="detail-entry"><span>CPA</span>CPA: Frank Ellis, Southlake</div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Latest Note</div>
+        <div style="font-size:12.5px;color:var(--muted);line-height:1.65;padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-sm)">Fastest close yet — committed within a week of intro. Wire instructions sent by Jessica automatically.</div>
+        <div class="detail-sec-label" style="margin-top:12px">Interaction History</div>
+        <div style="font-size:12px;color:var(--dim)">Intro Jun 15 · Interested Jun 16 · Committed Jun 21</div><div class="detail-timeline" title="Intro -> Interested -> Review -> Committed"><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div><div class="tl-line done"></div><div class="tl-dot done"></div></div>
+      </div>
+      <div>
+        <div class="detail-sec-label">Quick Actions</div>
+        <div class="detail-actions" style="flex-wrap:wrap">
+          <button class="detail-btn primary compose-from-detail" data-name="Dr. Linda Brooks" data-type="email">✉ Email</button>
+          <button class="detail-btn compose-from-detail" data-name="Dr. Linda Brooks" data-type="text">💬 Text</button>
+          <button class="detail-btn">📋 Edit Profile</button>
+          <button class="detail-btn">📅 Schedule Call</button>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+
+<!-- ══ SCREEN 4: ORDER PORTAL ════════════════════════════════════ -->
+<div class="screen s4">
+  <div class="skeleton-overlay" id="skel-3">
+    <div class="skel-block" style="height:40px;width:60%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+    <div class="skel-block" style="height:90px;width:100%"></div>
+  </div>
+  <div class="s4-scrim" id="s4Scrim"></div>
+  <div class="s4-header">
+    <div class="s4-logo">
+      MedSpa Supply Portal
+      <span class="s4-logo-divider">/</span>
+      <span class="s4-spa-name">Luxe Aesthetics · Dallas TX</span>
+    </div>
+    <div class="s4-header-right">
+      <span id="s4HeaderCount">3 items in cart</span>
+      <button class="s4-cart-btn" id="s4CartBtnId">🛒 &nbsp;View Cart (<span id="s4CartBtnCount">3</span>)</button>
+    </div>
+  </div>
+
+  <!-- STEP PROGRESS -->
+  <div class="s4-steps">
+    <div class="s4-step done"><div class="s4-step-dot done">✓</div><span class="s4-step-name">Browse</span></div>
+    <div class="s4-step-line done"></div>
+    <div class="s4-step active"><div class="s4-step-dot active">2</div><span class="s4-step-name">Review Order</span></div>
+    <div class="s4-step-line"></div>
+    <div class="s4-step"><div class="s4-step-dot todo">3</div><span class="s4-step-name">Confirm</span></div>
+    <div class="s4-step-line"></div>
+    <div class="s4-step"><div class="s4-step-dot todo">4</div><span class="s4-step-name">Track Delivery</span></div>
+  </div>
+
+  <div class="s4-body">
+    <!-- CATALOG -->
+    <div class="s4-catalog">
+      <div class="s4-tabs">
+        <button class="s4-subtab on" id="subtabBrowse">Browse Catalog</button>
+        <button class="s4-subtab" id="subtabRecent">Recent Orders (3)</button>
+      </div>
+
+      <div class="recent-orders-view" id="recentOrdersView">
+        <div class="recent-order-card">
+          <div class="ro-top"><span class="ro-id">Order #ORD-2025-1798</span><span class="ro-status">Delivered</span></div>
+          <div class="ro-items">2× Botox 100u, 5× Nitrile Gloves ×100, 1× Alcohol Swabs ×200 — 3 vendors</div>
+          <div class="ro-bottom"><span class="ro-total">$1,340</span><button class="ro-reorder" data-order="1798">↺ Reorder</button></div>
+        </div>
+        <div class="recent-order-card">
+          <div class="ro-top"><span class="ro-id">Order #ORD-2025-1756</span><span class="ro-status">Delivered</span></div>
+          <div class="ro-items">4× Microneedling Cartridges ×10, 2× Hydra Serum 30ml — 1 vendor</div>
+          <div class="ro-bottom"><span class="ro-total">$464</span><button class="ro-reorder" data-order="1756">↺ Reorder</button></div>
+        </div>
+        <div class="recent-order-card">
+          <div class="ro-top"><span class="ro-id">Order #ORD-2025-1702</span><span class="ro-status">Delivered</span></div>
+          <div class="ro-items">3× Botox 100u, 1× Restylane Lyft 1ml, 3× Nitrile Gloves ×100 — 2 vendors</div>
+          <div class="ro-bottom"><span class="ro-total">$2,104</span><button class="ro-reorder" data-order="1702">↺ Reorder</button></div>
+        </div>
+      </div>
+
+      <div class="browse-view" id="browseView">
+      <div class="s4-cats">
+        <button class="s4-cat on">All <span class="s4-cat-cnt">27</span></button>
+        <button class="s4-cat">Botox + Fillers <span class="s4-cat-cnt">9</span></button>
+        <button class="s4-cat">Microneedling <span class="s4-cat-cnt">6</span></button>
+        <button class="s4-cat">Consumables <span class="s4-cat-cnt">9</span></button>
+        <button class="s4-cat">Devices <span class="s4-cat-cnt">3</span></button>
+      </div>
+
+      <div class="s4-section-head">In your order</div>
+      <div class="s4-products">
+        <div class="prod-card" data-name="Botox 100u" data-price="580" data-vendor="A" data-vendorname="Allergan" data-color="blue" data-icon="💉"><div class="prod-img blue"><div class="stock-dot in"></div>💉</div><div class="prod-info"><div class="prod-vendor">Allergan · Vendor A</div><div class="prod-name">Botox 100u</div><div class="prod-price">$580 / vial</div><div class="prod-stock in">● In stock (48 vials)</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">2</span><button class="qty-btn">+</button><button class="add-btn in">In order</button></div></div></div>
+        <div class="prod-card" data-name="Microneedling Cartridges ×10" data-price="95" data-vendor="B" data-vendorname="SkinPen" data-color="green" data-icon="🔬"><div class="prod-img green"><div class="stock-dot low"></div>🔬</div><div class="prod-info"><div class="prod-vendor">SkinPen · Vendor B</div><div class="prod-name">Microneedling Cartridges ×10</div><div class="prod-price">$95 / pack</div><div class="prod-stock low">⚠ Low stock (4 packs)</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">3</span><button class="qty-btn">+</button><button class="add-btn in">In order</button></div></div></div>
+        <div class="prod-card" data-name="Nitrile Gloves ×100" data-price="18" data-vendor="C" data-vendorname="Medline" data-color="gold" data-icon="🧤"><div class="prod-img gold"><div class="stock-dot in"></div>🧤</div><div class="prod-info"><div class="prod-vendor">Medline · Vendor C</div><div class="prod-name">Nitrile Gloves ×100</div><div class="prod-price">$18 / box</div><div class="prod-stock in">● In stock (200+ boxes)</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">1</span><button class="qty-btn">+</button><button class="add-btn in">In order</button></div></div></div>
+      </div>
+
+      <div class="s4-section-head" style="margin-top:6px">Add more products</div>
+      <div class="s4-products">
+        <div class="prod-card" data-name="Restylane Lyft 1ml" data-price="310" data-vendor="A" data-vendorname="Galderma" data-color="blue" data-icon="✨"><div class="prod-img blue"><div class="stock-dot in"></div>✨</div><div class="prod-info"><div class="prod-vendor">Galderma · Vendor A</div><div class="prod-name">Restylane Lyft 1ml</div><div class="prod-price">$310 / syringe</div><div class="prod-stock in">● In stock</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">0</span><button class="qty-btn">+</button><button class="add-btn add">Add</button></div></div></div>
+        <div class="prod-card" data-name="Hydra Serum 30ml" data-price="42" data-vendor="B" data-vendorname="SkinPen" data-color="green" data-icon="💧"><div class="prod-img green"><div class="stock-dot in"></div>💧</div><div class="prod-info"><div class="prod-vendor">SkinPen · Vendor B</div><div class="prod-name">Hydra Serum 30ml</div><div class="prod-price">$42 / bottle</div><div class="prod-stock in">● In stock</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">0</span><button class="qty-btn">+</button><button class="add-btn add">Add</button></div></div></div>
+        <div class="prod-card" data-name="Alcohol Swabs ×200" data-price="12" data-vendor="C" data-vendorname="Medline" data-color="gold" data-icon="🩹"><div class="prod-img gold"><div class="stock-dot out"></div>🩹</div><div class="prod-info"><div class="prod-vendor">Medline · Vendor C</div><div class="prod-name">Alcohol Swabs ×200</div><div class="prod-price">$12 / box</div><div class="prod-stock out">✕ Out of stock</div><div class="prod-add"><button class="qty-btn" disabled style="opacity:.35">−</button><span class="qty-val" style="opacity:.4">0</span><button class="qty-btn" disabled style="opacity:.35">+</button><button class="add-btn" style="background:var(--dim);cursor:not-allowed">Notify</button></div></div></div>
+        <div class="prod-card" data-name="Xeomin 100u" data-price="540" data-vendor="A" data-vendorname="Merz" data-color="blue" data-icon="💉"><div class="prod-img blue"><div class="stock-dot in"></div>💉</div><div class="prod-info"><div class="prod-vendor">Merz · Vendor A</div><div class="prod-name">Xeomin 100u</div><div class="prod-price">$540 / vial</div><div class="prod-stock in">● In stock (22 vials)</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">0</span><button class="qty-btn">+</button><button class="add-btn add">Add</button></div></div></div>
+        <div class="prod-card" data-name="PRP Activator Kit" data-price="68" data-vendor="B" data-vendorname="SkinPen" data-color="green" data-icon="🧴"><div class="prod-img green"><div class="stock-dot in"></div>🧴</div><div class="prod-info"><div class="prod-vendor">SkinPen · Vendor B</div><div class="prod-name">PRP Activator Kit</div><div class="prod-price">$68 / kit</div><div class="prod-stock in">● In stock (30 kits)</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">0</span><button class="qty-btn">+</button><button class="add-btn add">Add</button></div></div></div>
+        <div class="prod-card" data-name="Lidocaine Topical 5%" data-price="24" data-vendor="C" data-vendorname="Medline" data-color="gold" data-icon="💊"><div class="prod-img gold"><div class="stock-dot low"></div>💊</div><div class="prod-info"><div class="prod-vendor">Medline · Vendor C</div><div class="prod-name">Lidocaine Topical 5%</div><div class="prod-price">$24 / tube</div><div class="prod-stock low">⚠ Low stock (6 tubes)</div><div class="prod-add"><button class="qty-btn">−</button><span class="qty-val">0</span><button class="qty-btn">+</button><button class="add-btn add">Add</button></div></div></div>
+      </div>
+      </div><!-- /browse-view -->
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="s4-sidebar" id="s4Sidebar">
+      <div class="s4-sb-head">
+        <button class="drawer-close" id="s4SidebarClose">×</button>
+        <span class="s4-sb-title">Order Summary</span>
+        <span class="s4-sb-count" id="s4SbCount">3 items</span>
+      </div>
+      <div class="s4-order-items" id="s4OrderItems">
+        <div class="oitem"><div class="oitem-icon blue">💉</div><div class="oitem-info"><div class="oitem-name">Botox 100u ×2</div><div class="oitem-detail">Allergan · Vendor A</div></div><div class="oitem-price">$1,160</div></div>
+        <div class="oitem"><div class="oitem-icon green">🔬</div><div class="oitem-info"><div class="oitem-name">Cartridges ×10 ×3</div><div class="oitem-detail">SkinPen · Vendor B</div></div><div class="oitem-price">$285</div></div>
+        <div class="oitem"><div class="oitem-icon gold">🧤</div><div class="oitem-info"><div class="oitem-name">Nitrile Gloves ×100 ×1</div><div class="oitem-detail">Medline · Vendor C</div></div><div class="oitem-price">$18</div></div>
+      </div>
+
+      <div class="split-section" id="s4SplitSection">
+        <div class="split-section-label">Vendor split &amp; dispatch</div>
+        <div class="split-row" id="splitRowA">
+          <div class="split-row-top"><div class="split-vendor"><div class="split-dot" style="background:var(--blue)"></div>Vendor A &nbsp;·&nbsp; <span id="splitVendorNameA">Allergan</span></div><div class="split-right"><span class="split-pct" id="splitPctA">79%</span><span class="split-amt" id="splitAmtA">$1,160</span></div></div>
+          <div class="split-bar-wrap"><div class="split-bar-fill" id="splitBarA" style="width:79%;background:var(--blue)"></div></div>
+        </div>
+        <div class="split-row" id="splitRowB">
+          <div class="split-row-top"><div class="split-vendor"><div class="split-dot" style="background:var(--green)"></div>Vendor B &nbsp;·&nbsp; <span id="splitVendorNameB">SkinPen</span></div><div class="split-right"><span class="split-pct" id="splitPctB">19%</span><span class="split-amt" id="splitAmtB">$285</span></div></div>
+          <div class="split-bar-wrap"><div class="split-bar-fill" id="splitBarB" style="width:19%;background:var(--green)"></div></div>
+        </div>
+        <div class="split-row" id="splitRowC">
+          <div class="split-row-top"><div class="split-vendor"><div class="split-dot" style="background:var(--gold)"></div>Vendor C &nbsp;·&nbsp; <span id="splitVendorNameC">Medline</span></div><div class="split-right"><span class="split-pct" id="splitPctC">2%</span><span class="split-amt" id="splitAmtC">$18</span></div></div>
+          <div class="split-bar-wrap"><div class="split-bar-fill" id="splitBarC" style="width:2%;background:var(--gold)"></div></div>
+        </div>
+      </div>
+
+      <div class="s4-totals">
+        <div class="total-row"><span style="color:var(--muted)">Subtotal</span><span id="s4Subtotal">$1,463</span></div>
+        <div class="total-row spread-row"><span>Service fee (7%)</span><span id="s4Fee">+ $102</span></div>
+        <div class="total-row main"><span>Total</span><span id="s4Total">$1,565</span></div>
+      </div>
+      <div class="s4-savings" id="s4Savings">💚 You save ~18% vs ordering each vendor directly</div>
+      <button class="s4-place-btn" id="s4PlaceBtnId">Place Order — Dispatch to <span id="s4VendorCount">3</span> Vendors →</button>
+      <div class="s4-dispatch-note">All 3 vendors notified simultaneously. Ship to: Luxe Aesthetics, 2400 Cedar Springs Rd, Dallas TX.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- STAGE DROPDOWN -->
+<div class="stage-dropdown" id="stageDropdown">
+  <div class="stage-option" data-stage="committed"><div class="stage-dot" style="background:var(--green)"></div>Committed</div>
+  <div class="stage-option" data-stage="interested"><div class="stage-dot" style="background:var(--indigo)"></div>Interested</div>
+  <div class="stage-option" data-stage="cpa"><div class="stage-dot" style="background:var(--gold)"></div>CPA Review</div>
+  <div class="stage-option" data-stage="intro"><div class="stage-dot" style="background:var(--blue)"></div>Intro Done</div>
+  <div class="stage-option" data-stage="cold"><div class="stage-dot" style="background:var(--dim)"></div>Cold</div>
+</div>
+
+<!-- COMPOSE MODAL -->
+<div class="overlay" id="composeOverlay">
+  <div class="compose-modal">
+    <div class="compose-head">
+      <span class="compose-title" id="composeTitle">Email</span>
+      <button class="compose-x" id="composeX">×</button>
+    </div>
+    <div class="compose-body">
+      <div class="compose-field"><label>To</label><input class="compose-input" id="composeTo" readonly></div>
+      <div class="compose-field" id="subjectField"><label>Subject</label><input class="compose-input" id="composeSubject" placeholder="Subject line..."></div>
+      <div class="compose-field"><label>Message</label><textarea class="compose-textarea" id="composeMsg" placeholder="Type your message..."></textarea></div>
+    </div>
+    <div class="compose-foot">
+      <button class="compose-cancel" id="composeCancel">Cancel</button>
+      <button class="compose-send" id="composeSend">Send via Jessica ✉</button>
+    </div>
+  </div>
+</div>
+
+<!-- NEW INVESTOR MODAL -->
+<div class="overlay" id="newInvOverlay">
+  <div class="new-inv-modal">
+    <div class="modal-head">
+      <span class="modal-head-title">Add New Investor</span>
+      <button class="compose-x" id="newInvX">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-row">
+        <div class="modal-field"><label>Full Name</label><input class="modal-input" placeholder="Dr. First Last"></div>
+        <div class="modal-field"><label>Specialty / Company</label><input class="modal-input" placeholder="Cardiology, Dallas"></div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-field"><label>Email</label><input class="modal-input" placeholder="doctor@email.com" type="email"></div>
+        <div class="modal-field"><label>Phone</label><input class="modal-input" placeholder="+1 (___) ___-____"></div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-field"><label>Investment Amount</label><input class="modal-input" placeholder="$25,000" type="text"></div>
+        <div class="modal-field"><label>Stage</label>
+          <select class="modal-select">
+            <option>Lead</option><option>Intro Done</option><option>Interested</option>
+            <option>CPA Review</option><option>Committed</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-field"><label>Notes</label><textarea class="compose-textarea" placeholder="How did you meet? Any context..." style="min-height:60px"></textarea></div>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-close-btn" id="newInvCancel">Cancel</button>
+      <button class="modal-save" id="newInvSave">Add to Pipeline</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+(function() {
+
+// ── TAB SWITCHING ─────────────────────────────────────────────
+var tabs = document.querySelectorAll('.tab');
+var screens = document.querySelectorAll('.screen');
+var skelIds = ['skel-0', 'skel-1', 'skel-2', 'skel-3'];
+function sw(i) {
+  tabs.forEach(function(t, j) { j===i ? t.classList.add('on') : t.classList.remove('on'); });
+  screens.forEach(function(s, j) {
+    if (j===i) { s.classList.add('on'); s.style.display='flex'; }
+    else { s.classList.remove('on'); s.style.display='none'; }
+  });
+  document.querySelectorAll('.mtab').forEach(function(m, j) { j===i ? m.classList.add('on') : m.classList.remove('on'); });
+  var skel = document.getElementById(skelIds[i]);
+  if (skel) {
+    skel.classList.add('show');
+    setTimeout(function() { skel.classList.remove('show'); }, 380);
+  }
+}
+window.sw = sw;
+tabs.forEach(function(tab, i) { tab.addEventListener('click', function() { sw(i); }); });
+
+// ── TOAST (with optional Undo action + notification history) ──
+var toastEl = document.getElementById('toast');
+var toastTimer;
+function toast(msg, undoLabel, undoFn) {
+  if (!toastEl) return;
+  if (undoLabel && undoFn) {
+    toastEl.innerHTML = '<span>' + msg + '</span><span class="toast-undo" id="toastUndoBtn">' + undoLabel + '</span>';
+    var undoBtn = document.getElementById('toastUndoBtn');
+    if (undoBtn) undoBtn.addEventListener('click', function() {
+      undoFn();
+      toastEl.classList.remove('visible');
+      clearTimeout(toastTimer);
+    });
+  } else {
+    toastEl.textContent = msg;
+  }
+  toastEl.classList.add('visible');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { toastEl.classList.remove('visible'); }, 4000);
+  if (typeof window.pushNotification === 'function') {
+    window.pushNotification('🔔', msg);
+  }
+}
+window.toast = toast;
+
+// ── PENDING COUNT ─────────────────────────────────────────────
+var pendingCount = document.querySelectorAll('.acard').length;
+function updateCount(delta) {
+  pendingCount += delta;
+  var b = document.querySelector('.sec-count');
+  if (b) b.textContent = pendingCount;
+  var sb = document.querySelector('.s1-nav-item[data-view="view-pending-review"] .s1-badge');
+  if (sb) sb.textContent = pendingCount;
+  if (pendingCount <= 0) {
+    var ac = document.querySelector('.acards');
+    if (ac) ac.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🎉</div><div class="empty-state-title">All caught up</div><div class="empty-state-desc">No pending actions. Use the command bar above to create new ones.</div></div>';
+  }
+}
+
+// ── ACTION CARD BUTTONS (with Undo-capable toasts) ─────────────
+function approveCard(card, silent) {
+  var parent = card.parentNode;
+  var nextSibling = card.nextSibling;
+  var timers = [];
+  card.style.borderColor = 'var(--green)';
+  card.style.background = 'rgba(42,122,86,.05)';
+  timers.push(setTimeout(function() {
+    card.style.opacity = '0';
+    card.style.transform = 'translateX(24px)';
+    timers.push(setTimeout(function() {
+      card.style.maxHeight = card.offsetHeight + 'px';
+      card.style.overflow = 'hidden';
+      requestAnimationFrame(function() {
+        card.style.maxHeight = '0';
+        card.style.margin = '0';
+        timers.push(setTimeout(function() { if (card.parentNode) card.parentNode.removeChild(card); }, 320));
+      });
+    }, 320));
+  }, 200));
+  updateCount(-1);
+
+  if (!silent) {
+    toast('Action approved and sent ✓', 'Undo', function() {
+      timers.forEach(clearTimeout);
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+      card.style.maxHeight = '';
+      card.style.overflow = '';
+      card.style.margin = '';
+      card.style.borderColor = '';
+      card.style.background = '';
+      if (!card.parentNode) {
+        if (nextSibling && nextSibling.parentNode === parent) parent.insertBefore(card, nextSibling);
+        else if (parent) parent.appendChild(card);
+      }
+      updateCount(1);
+      toast('Approval undone — action restored to queue');
+    });
+  }
+}
+
+function removeCard(card) {
+  var parent = card.parentNode;
+  var nextSibling = card.nextSibling;
+  card.style.opacity = '0';
+  card.style.transform = 'translateX(-20px)';
+  var t = setTimeout(function() { if (card.parentNode) card.parentNode.removeChild(card); }, 300);
+  updateCount(-1);
+
+  toast('Action removed', 'Undo', function() {
+    clearTimeout(t);
+    card.style.opacity = '1';
+    card.style.transform = 'none';
+    if (!card.parentNode) {
+      if (nextSibling && nextSibling.parentNode === parent) parent.insertBefore(card, nextSibling);
+      else if (parent) parent.appendChild(card);
+    }
+    updateCount(1);
+    toast('Action restored to queue');
+  });
+}
+
+function editCard(card) {
+  var preview = card.querySelector('.acard-preview');
+  if (!preview) return;
+  if (card.classList.contains('is-editing')) {
+    var ta = card.querySelector('.edit-ta');
+    if (ta && preview) {
+      preview.innerHTML = ta.value.split('\n').map(function(l) {
+        return '<div class="acard-preview-line">' + l + '</div>';
+      }).join('');
+    }
+    card.classList.remove('is-editing');
+    var eb = card.querySelector('.btn-edit');
+    if (eb) eb.textContent = 'Edit';
+    toast('Changes saved');
+  } else {
+    var lines = Array.from(preview.querySelectorAll('.acard-preview-line')).map(function(l) { return l.textContent; }).join('\n');
+    preview.innerHTML = '<textarea class="edit-ta">' + lines + '</textarea>';
+    card.classList.add('is-editing');
+    var eb = card.querySelector('.btn-edit');
+    if (eb) eb.textContent = 'Save';
+    var ta2 = preview.querySelector('.edit-ta');
+    if (ta2) ta2.focus();
+  }
+}
+
+function bindCard(card) {
+  var ab = card.querySelector('.btn-approve');
+  var ub = card.querySelector('.btn-undo');
+  var eb = card.querySelector('.btn-edit');
+  if (ab) ab.addEventListener('click', function(e) { e.stopPropagation(); approveCard(card); });
+  if (ub) ub.addEventListener('click', function(e) { e.stopPropagation(); removeCard(card); });
+  if (eb) eb.addEventListener('click', function(e) { e.stopPropagation(); editCard(card); });
+}
+document.querySelectorAll('.acard').forEach(bindCard);
+
+// Approve All
+var allBtn = document.querySelector('.btn-all');
+if (allBtn) {
+  allBtn.addEventListener('click', function() {
+    var cards = Array.from(document.querySelectorAll('.acard'));
+    var n = cards.length;
+    cards.forEach(function(card, i) { setTimeout(function() { approveCard(card, true); }, i * 180); });
+    setTimeout(function() {
+      toast('All ' + n + ' actions approved and sent ✓');
+    }, n * 180 + 100);
+  });
+}
+
+// ── COMMAND BAR ───────────────────────────────────────────────
+var cmdBar = document.querySelector('.cmd-bar');
+var cmdInput = document.getElementById('cmdInput');
+var cmdSugg = document.getElementById('cmdSugg');
+
+if (cmdBar) cmdBar.addEventListener('click', function() { if (cmdInput) cmdInput.focus(); });
+if (cmdInput) {
+  cmdInput.addEventListener('focus', function() { if (cmdSugg) cmdSugg.classList.add('show'); });
+  cmdInput.addEventListener('blur', function() { setTimeout(function() { if (cmdSugg) cmdSugg.classList.remove('show'); }, 160); });
+  cmdInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      var cmd = this.value.trim();
+      this.value = '';
+      if (cmdSugg) cmdSugg.classList.remove('show');
+      processCommand(cmd);
+    }
+  });
+}
+document.querySelectorAll('.cmd-suggestion').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var sp = this.querySelector('span:last-child');
+    if (cmdInput && sp) { cmdInput.value = sp.textContent; cmdInput.focus(); }
+    if (cmdSugg) cmdSugg.classList.remove('show');
+  });
+});
+
+function processCommand(cmd) {
+  var c = cmd.toLowerCase();
+  var badge = 'EMAIL', cls = 'atype-email';
+  if (c.includes('text') || c.includes('sms')) { badge='GHL TEXT'; cls='atype-text'; }
+  else if (c.includes('crm') || c.includes('update') || c.includes('stage')) { badge='CRM UPDATE'; cls='atype-crm'; }
+  else if (c.includes('remind') || c.includes('calendar') || c.includes('schedule')) { badge='CALENDAR'; cls='atype-cal'; }
+
+  var origHTML = cmdBar ? cmdBar.innerHTML : '';
+  if (cmdBar) cmdBar.innerHTML = '<span style="color:var(--blue);font-size:15px">⏳</span><span style="font-size:13.5px;color:var(--muted);padding-left:8px">Jessica is processing...</span>';
+
+  setTimeout(function() {
+    if (cmdBar) { cmdBar.innerHTML = origHTML; rebindCmdBar(); }
+    var acards = document.querySelector('.acards');
+    if (!acards) return;
+    var card = document.createElement('div');
+    card.className = 'acard';
+    card.style.cssText = 'opacity:0;transform:translateY(-8px);transition:all .3s ease';
+    card.innerHTML = '<div class="acard-header"><div class="acard-left"><span class="atype ' + cls + '">' + badge + '</span><span class="acard-contact">From command bar</span></div><span class="acard-time">Just now</span></div><div class="acard-body"><div class="acard-preview"><div class="acard-preview-line"><b>Command:</b> ' + cmd + '</div><div class="acard-preview-line">Jessica drafted this — review before it sends.</div></div><div class="acard-actions"><button class="btn btn-approve">✓ Approve</button><button class="btn btn-edit">Edit</button><button class="btn btn-undo">Undo</button></div></div>';
+    acards.insertBefore(card, acards.firstChild);
+    requestAnimationFrame(function() { card.style.opacity='1'; card.style.transform='translateY(0)'; });
+    bindCard(card);
+    updateCount(1);
+    toast('Jessica added 1 new action to your queue');
+  }, 1300);
+}
+
+function rebindCmdBar() {
+  var inp = document.getElementById('cmdInput');
+  if (!inp) return;
+  inp.addEventListener('focus', function() { if (cmdSugg) cmdSugg.classList.add('show'); });
+  inp.addEventListener('blur', function() { setTimeout(function() { if (cmdSugg) cmdSugg.classList.remove('show'); }, 160); });
+  inp.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      var cmd2 = this.value.trim(); this.value = '';
+      if (cmdSugg) cmdSugg.classList.remove('show');
+      processCommand(cmd2);
+    }
+  });
+}
+
+// ── NAV ITEMS (real view switching) ─────────────────────────────
+function showNavView(viewId) {
+  document.querySelectorAll('.nav-view').forEach(function(v) { v.classList.remove('active'); });
+  var target = document.getElementById(viewId);
+  if (target) target.classList.add('active');
+  var mainEl = document.querySelector('.s1-main');
+  if (mainEl) mainEl.scrollTop = 0;
+}
+
+document.querySelectorAll('.s1-nav-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    document.querySelectorAll('.s1-nav-item').forEach(function(n) { n.classList.remove('on'); });
+    this.classList.add('on');
+
+    var gotoTab = this.getAttribute('data-goto-tab');
+    if (gotoTab !== null) {
+      sw(parseInt(gotoTab, 10));
+      closeS1DrawersSafe();
+      return;
+    }
+    var viewId = this.getAttribute('data-view');
+    if (viewId) showNavView(viewId);
+    closeS1DrawersSafe();
+  });
+});
+
+function closeS1DrawersSafe() {
+  var sb = document.getElementById('s1Sidebar');
+  var rt = document.getElementById('s1Right');
+  var sc = document.getElementById('s1Scrim');
+  if (window.innerWidth <= 968) {
+    if (sb) sb.classList.remove('open');
+    if (rt) rt.classList.remove('open');
+    if (sc) sc.classList.remove('open');
+  }
+}
+
+// "Open Full Pipeline" button inside Hot Leads view
+var hotLeadsBtn = document.getElementById('hotLeadsToCrm');
+if (hotLeadsBtn) hotLeadsBtn.addEventListener('click', function() {
+  sw(2);
+  document.querySelectorAll('.tab').forEach(function(t, j) { j===2 ? t.classList.add('on') : t.classList.remove('on'); });
+});
+
+// Integration toggles (visual only)
+document.querySelectorAll('.integration-toggle').forEach(function(tg) {
+  tg.addEventListener('click', function() {
+    this.classList.toggle('off');
+    toast(this.classList.contains('off') ? 'Integration paused' : 'Integration active');
+  });
+});
+
+// ── RIGHT PANEL LOG ITEMS ─────────────────────────────────────
+document.querySelectorAll('.log-item').forEach(function(item) {
+  item.style.cursor = 'pointer';
+  var detail = item.querySelector('.log-detail');
+  if (detail) {
+    detail.style.display = 'none';
+    item.addEventListener('click', function() {
+      detail.style.display = detail.style.display === 'none' ? '' : 'none';
+    });
+  }
+});
+
+// ── CRM ROW EXPAND ───────────────────────────────────────────
+document.querySelectorAll('.crm-tr').forEach(function(row) {
+  row.addEventListener('click', function(e) {
+    if (e.target.closest('.crm-btn') || e.target.closest('.sbadge')) return;
+    var id = this.dataset.id;
+    var detail = document.getElementById('detail-' + id);
+    if (!detail) return;
+    var isOpen = detail.classList.contains('open');
+    document.querySelectorAll('.crm-detail-row.open').forEach(function(d) { d.classList.remove('open'); });
+    if (!isOpen) detail.classList.add('open');
+  });
+});
+
+// Detail panel quick actions
+document.querySelectorAll('.compose-from-detail').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    openCompose(this.dataset.name, '', this.dataset.type);
+  });
+});
+
+// ── CRM SORT ─────────────────────────────────────────────────
+var sortState = {};
+document.querySelectorAll('.crm-th.sort').forEach(function(th) {
+  th.addEventListener('click', function() {
+    var key = this.textContent.trim();
+    var asc = sortState[key] !== true;
+    sortState[key] = asc;
+    document.querySelectorAll('.crm-th.sort').forEach(function(t) { t.classList.remove('sort-asc','sort-desc'); });
+    this.classList.add(asc ? 'sort-asc' : 'sort-desc');
+    var tbody = document.querySelector('.crm-table tbody');
+    if (!tbody) return;
+    var col = Array.from(this.parentElement.children).indexOf(this);
+    var pairs = [];
+    document.querySelectorAll('.crm-tr').forEach(function(row) {
+      var detailId = 'detail-' + row.dataset.id;
+      var detailRow = document.getElementById(detailId);
+      pairs.push([row, detailRow]);
+    });
+    pairs.sort(function(a, b) {
+      var aT = a[0].cells[col] ? a[0].cells[col].textContent.trim() : '';
+      var bT = b[0].cells[col] ? b[0].cells[col].textContent.trim() : '';
+      var aN = parseFloat(aT.replace(/[^0-9.]/g,''));
+      var bN = parseFloat(bT.replace(/[^0-9.]/g,''));
+      if (!isNaN(aN) && !isNaN(bN)) return asc ? aN-bN : bN-aN;
+      return asc ? aT.localeCompare(bT) : bT.localeCompare(aT);
+    });
+    pairs.forEach(function(p) {
+      tbody.appendChild(p[0]);
+      if (p[1]) tbody.appendChild(p[1]);
+    });
+    toast('Sorted by ' + key + (asc ? ' ↑' : ' ↓'));
+  });
+});
+
+// ── STAGE DROPDOWN ────────────────────────────────────────────
+var stageDD = document.getElementById('stageDropdown');
+var currentBadge = null;
+var stageMap = {
+  committed: {cls:'s-committed', lbl:'Committed'},
+  interested: {cls:'s-interested', lbl:'Interested'},
+  cpa: {cls:'s-cpa', lbl:'CPA Review'},
+  intro: {cls:'s-intro', lbl:'Intro Done'},
+  cold: {cls:'s-cold', lbl:'Cold'}
+};
+
+document.querySelectorAll('.crm-table .sbadge').forEach(function(badge) {
+  badge.title = 'Click to change stage';
+  badge.addEventListener('click', function(e) {
+    e.stopPropagation();
+    currentBadge = this;
+    var r = this.getBoundingClientRect();
+    if (stageDD) {
+      stageDD.style.display = 'block';
+      stageDD.style.top = (r.bottom + 4) + 'px';
+      stageDD.style.left = r.left + 'px';
+    }
+  });
+});
+
+if (stageDD) {
+  stageDD.querySelectorAll('.stage-option').forEach(function(opt) {
+    opt.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (!currentBadge) return;
+      var s = this.dataset.stage;
+      var info = stageMap[s];
+      if (info) { currentBadge.className = 'sbadge ' + info.cls; currentBadge.textContent = info.lbl; }
+      stageDD.style.display = 'none';
+      toast('Stage updated to ' + this.textContent.trim());
+    });
+  });
+}
+document.addEventListener('click', function() { if (stageDD) stageDD.style.display = 'none'; });
+
+// ── COMPOSE MODAL ─────────────────────────────────────────────
+var composeOverlay = document.getElementById('composeOverlay');
+var composeTitle = document.getElementById('composeTitle');
+var composeTo = document.getElementById('composeTo');
+var composeSubject = document.getElementById('composeSubject');
+var subjectField = document.getElementById('subjectField');
+var composeMsg = document.getElementById('composeMsg');
+var composeSend = document.getElementById('composeSend');
+var isText = false;
+
+window.openCompose = openCompose;
+function openCompose(name, email, type) {
+  if (!composeOverlay) return;
+  isText = (type === 'text');
+  if (composeTitle) composeTitle.textContent = (isText ? 'Text ' : 'Email to ') + name;
+  if (composeTo) composeTo.value = isText ? name + ' via GHL (+1 214 555-0190)' : (email || name.toLowerCase().replace(/\s+/g,'.') + '@gmail.com');
+  if (subjectField) subjectField.style.display = isText ? 'none' : '';
+  if (composeSubject) composeSubject.value = '';
+  if (composeMsg) composeMsg.value = '';
+  if (composeSend) composeSend.textContent = isText ? 'Send Text via GHL 💬' : 'Send via Jessica ✉';
+  composeOverlay.classList.add('open');
+  if (composeMsg) setTimeout(function() { composeMsg.focus(); }, 100);
+}
+
+document.querySelectorAll('.crm-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var row = this.closest('tr');
+    var name = row ? (row.querySelector('.contact-name') || {textContent:''}).textContent : 'Contact';
+    if (this.textContent === 'Email') openCompose(name, '', 'email');
+    else if (this.textContent === 'Text') openCompose(name, '', 'text');
+    else if (this.textContent === 'Edit') { toast('Opening profile for ' + name + '...'); }
+  });
+});
+
+function closeCompose() { if (composeOverlay) composeOverlay.classList.remove('open'); }
+var cx = document.getElementById('composeX');
+var cc = document.getElementById('composeCancel');
+if (cx) cx.addEventListener('click', closeCompose);
+if (cc) cc.addEventListener('click', closeCompose);
+if (composeSend) {
+  composeSend.addEventListener('click', function() {
+    closeCompose();
+    toast('Sent via Jessica ✓ · Added to review queue');
+  });
+}
+if (composeOverlay) composeOverlay.addEventListener('click', function(e) { if (e.target === composeOverlay) closeCompose(); });
+
+// ── NEW INVESTOR MODAL ────────────────────────────────────────
+var newInvOverlay = document.getElementById('newInvOverlay');
+var newInvBtn = document.querySelector('.s3-new');
+if (newInvBtn) newInvBtn.addEventListener('click', function() { if (newInvOverlay) newInvOverlay.classList.add('open'); });
+function closeNewInv() { if (newInvOverlay) newInvOverlay.classList.remove('open'); }
+var nix = document.getElementById('newInvX');
+var nic = document.getElementById('newInvCancel');
+var nis = document.getElementById('newInvSave');
+if (nix) nix.addEventListener('click', closeNewInv);
+if (nic) nic.addEventListener('click', closeNewInv);
+if (nis) nis.addEventListener('click', function() { closeNewInv(); toast('New investor added to pipeline ✓'); });
+if (newInvOverlay) newInvOverlay.addEventListener('click', function(e) { if (e.target === newInvOverlay) closeNewInv(); });
+
+// ── SMART FILTERS ─────────────────────────────────────────────
+document.querySelectorAll('.s3-filter').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.s3-filter').forEach(function(b) { b.classList.remove('on'); });
+    this.classList.add('on');
+    var label = this.firstChild.textContent.trim();
+    document.querySelectorAll('.crm-tr').forEach(function(row) {
+      var show = true;
+      if (label === 'Hot Leads') show = !!(row.querySelector('.s-committed,.s-cpa'));
+      else if (label === 'Needs Follow-up') show = !!(row.querySelector('.s-cold,.s-intro'));
+      else if (label === 'AI Managed') show = !!(row.querySelector('.ai-tag'));
+      else if (label === 'This Week') {
+        var t = row.cells[3] ? row.cells[3].textContent : '';
+        show = t.includes('ago') || t.includes('Today') || t.includes('hours') || t.includes('Yesterday');
+      }
+      row.style.display = show ? '' : 'none';
+      var d = document.getElementById('detail-' + row.dataset.id);
+      if (d) d.classList.remove('open');
+    });
+  });
+});
+
+// ── CRM SEARCH ────────────────────────────────────────────────
+var crmSearch = document.querySelector('.s3-search');
+if (crmSearch) {
+  crmSearch.addEventListener('input', function() {
+    var q = this.value.toLowerCase();
+    document.querySelectorAll('.crm-tr').forEach(function(row) {
+      var n = (row.querySelector('.contact-name')||{textContent:''}).textContent.toLowerCase();
+      var c = (row.querySelector('.contact-company')||{textContent:''}).textContent.toLowerCase();
+      row.style.display = (n.includes(q) || c.includes(q)) ? '' : 'none';
+    });
+  });
+}
+
+// ── ORDER PORTAL ──────────────────────────────────────────────
+document.querySelectorAll('.qty-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    if (this.disabled) return;
+    var v = this.parentElement.querySelector('.qty-val');
+    if (!v) return;
+    var n = parseInt(v.textContent)||0;
+    v.textContent = this.textContent==='+' ? n+1 : Math.max(0,n-1);
+  });
+});
+
+document.querySelectorAll('.s4-cat').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.s4-cat').forEach(function(b) { b.classList.remove('on'); });
+    this.classList.add('on');
+  });
+});
+
+var placeBtn = document.querySelector('.s4-place-btn');
+var orderDone = false;
+if (placeBtn) {
+  placeBtn.addEventListener('click', function() {
+    if (orderDone) return;
+    orderDone = true;
+    var btn = this;
+    btn.innerHTML = '<span class="spinner"></span> Placing order...';
+    btn.style.opacity = '.7';
+    setTimeout(function() {
+      btn.style.display = 'none';
+      var sidebar = btn.closest('.s4-sidebar');
+      if (sidebar) {
+        var conf = document.createElement('div');
+        conf.className = 'order-confirm';
+        conf.innerHTML = '<div class="order-confirm-icon">🎉</div><div class="order-confirm-title">Order Placed!</div><div class="order-confirm-id">Order #ORD-2025-1842</div><div class="order-confirm-desc">3 vendors notified simultaneously.<br>Estimated delivery: 2-4 business days.</div><button class="order-confirm-btn" id="newOrderBtn">Start New Order</button>';
+        sidebar.appendChild(conf);
+        var nb = document.getElementById('newOrderBtn');
+        if (nb) nb.addEventListener('click', function() { orderDone=false; location.reload(); });
+      }
+      toast('Order #ORD-2025-1842 confirmed · 3 vendors dispatched ✓');
+    }, 1800);
+  });
+}
+
+document.querySelectorAll('.add-btn').forEach(function(btn) {
+  if (btn.textContent.trim() === 'Notify') {
+    btn.addEventListener('click', function() { toast("We'll email you when this item is back in stock"); });
+  }
+});
+
+// ── VOICE COMMAND ─────────────────────────────────────────────
+var reviewBtn = document.querySelector('.s2-review-btn');
+if (reviewBtn) reviewBtn.addEventListener('click', function() { sw(0); });
+
+var waveWrap = document.querySelector('.s2-wave-wrap');
+var listening = true;
+if (waveWrap) {
+  waveWrap.title = 'Click to pause/resume';
+  waveWrap.style.cursor = 'pointer';
+  waveWrap.addEventListener('click', function() {
+    listening = !listening;
+    this.querySelectorAll('.wbar').forEach(function(b) {
+      b.style.animationPlayState = listening ? 'running' : 'paused';
+      b.style.opacity = listening ? '' : '0.25';
+    });
+    var sub = document.querySelector('.s2-app-sub');
+    if (sub) { sub.textContent = listening ? 'Active' : 'Paused'; }
+    toast(listening ? 'Listening resumed 🎙' : 'Listening paused ⏸');
+  });
+}
+
+
+// ── MOBILE HAMBURGER + TAB DRAWER ──────────────────────────────
+var hamburgerBtn = document.getElementById('hamburgerBtn');
+var mobileTabs = document.getElementById('mobileTabs');
+if (hamburgerBtn && mobileTabs) {
+  hamburgerBtn.addEventListener('click', function() {
+    mobileTabs.classList.toggle('open');
+  });
+  mobileTabs.querySelectorAll('.mtab').forEach(function(mt, i) {
+    mt.addEventListener('click', function() {
+      sw(i);
+      mobileTabs.querySelectorAll('.mtab').forEach(function(x) { x.classList.remove('on'); });
+      mt.classList.add('on');
+      mobileTabs.classList.remove('open');
+    });
+  });
+}
+// Keep mobile tab highlight in sync when desktop tabs are clicked
+tabs.forEach(function(tab, i) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.mtab').forEach(function(m, j) { j===i ? m.classList.add('on') : m.classList.remove('on'); });
+  });
+});
+
+// ── S1 MOBILE DRAWERS (sidebar + activity log) ─────────────────
+var s1Sidebar = document.getElementById('s1Sidebar');
+var s1Right = document.getElementById('s1Right');
+var s1Scrim = document.getElementById('s1Scrim');
+var s1MenuBtn = document.getElementById('s1MenuBtn');
+var s1LogBtn = document.getElementById('s1LogBtn');
+var s1SidebarClose = document.getElementById('s1SidebarClose');
+var s1RightClose = document.getElementById('s1RightClose');
+
+function closeS1Drawers() {
+  if (s1Sidebar) s1Sidebar.classList.remove('open');
+  if (s1Right) s1Right.classList.remove('open');
+  if (s1Scrim) s1Scrim.classList.remove('open');
+}
+if (s1MenuBtn) s1MenuBtn.addEventListener('click', function() {
+  closeS1Drawers();
+  if (s1Sidebar) s1Sidebar.classList.add('open');
+  if (s1Scrim) s1Scrim.classList.add('open');
+});
+if (s1LogBtn) s1LogBtn.addEventListener('click', function() {
+  closeS1Drawers();
+  if (s1Right) s1Right.classList.add('open');
+  if (s1Scrim) s1Scrim.classList.add('open');
+});
+if (s1SidebarClose) s1SidebarClose.addEventListener('click', closeS1Drawers);
+if (s1RightClose) s1RightClose.addEventListener('click', closeS1Drawers);
+if (s1Scrim) s1Scrim.addEventListener('click', closeS1Drawers);
+
+// ── S4 MOBILE CART DRAWER ───────────────────────────────────────
+var s4Sidebar = document.getElementById('s4Sidebar');
+var s4Scrim = document.getElementById('s4Scrim');
+var s4SidebarClose = document.getElementById('s4SidebarClose');
+var s4CartBtn = document.querySelector('.s4-cart-btn');
+
+function openS4Cart() {
+  if (s4Sidebar) s4Sidebar.classList.add('open');
+  if (s4Scrim) s4Scrim.classList.add('open');
+}
+function closeS4Cart() {
+  if (s4Sidebar) s4Sidebar.classList.remove('open');
+  if (s4Scrim) s4Scrim.classList.remove('open');
+}
+if (s4CartBtn) s4CartBtn.addEventListener('click', function() {
+  if (window.innerWidth <= 968) openS4Cart();
+});
+if (s4SidebarClose) s4SidebarClose.addEventListener('click', closeS4Cart);
+if (s4Scrim) s4Scrim.addEventListener('click', closeS4Cart);
+
+// Close mobile drawers on window resize back to desktop
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 968) {
+    closeS1Drawers();
+    closeS4Cart();
+  }
+});
+
+
+// ══════════════════════════════════════════════════════════════
+// 1. VOICE COMMAND REPLAY SIMULATION
+// ══════════════════════════════════════════════════════════════
+(function() {
+  var replayBtn = document.getElementById('s2ReplayBtn');
+  var wave = document.getElementById('s2Wave');
+  var transcriptEl = document.getElementById('s2Transcript');
+  var cursorEl = document.getElementById('s2Cursor');
+  var entitiesEl = document.getElementById('s2Entities');
+  var confFill = document.getElementById('s2ConfFill');
+  var confVal = document.getElementById('s2ConfVal');
+  var actionsWrap = document.getElementById('s2Actions');
+  var reviewBtn2 = document.getElementById('s2ReviewBtn');
+  if (!replayBtn || !transcriptEl) return;
+
+  var fullText = transcriptEl.getAttribute('data-full');
+  var running = false;
+
+  function sleep(ms) { return new Promise(function(res) { setTimeout(res, ms); }); }
+
+  async function runReplay() {
+    if (running) return;
+    running = true;
+    replayBtn.disabled = true;
+    replayBtn.innerHTML = '<span class="s2-replay-icon">⏺</span> Recording...';
+
+    // Reset state
+    transcriptEl.childNodes[0].textContent = '"';
+    entitiesEl.querySelectorAll('.s2-entity').forEach(function(e) { e.classList.add('pending'); });
+    confFill.style.width = '0%';
+    confVal.textContent = '0%';
+    actionsWrap.querySelectorAll('.s2-action').forEach(function(a) {
+      a.classList.remove('done');
+      var status = a.querySelector('.s2-action-status');
+      var prog = a.querySelector('.s2-action-prog-fill');
+      if (status) { status.textContent = 'Waiting...'; status.classList.remove('done'); status.classList.remove('doing'); }
+      if (prog) prog.style.width = '0%';
+    });
+    reviewBtn2.style.opacity = '.4';
+    reviewBtn2.style.pointerEvents = 'none';
+    wave.classList.add('recording');
+
+    await sleep(900);
+
+    // Typewriter effect
+    replayBtn.innerHTML = '<span class="s2-replay-icon">✍️</span> Transcribing...';
+    var chars = fullText.split('');
+    var current = '"';
+    for (var i = 0; i < chars.length; i++) {
+      current += chars[i];
+      transcriptEl.childNodes[0].textContent = current;
+      if (i % 3 === 0) await sleep(14);
+    }
+    transcriptEl.childNodes[0].textContent = current + '"';
+    wave.classList.remove('recording');
+
+    await sleep(300);
+
+    // Entities appear one by one
+    replayBtn.innerHTML = '<span class="s2-replay-icon">🔍</span> Extracting details...';
+    var ents = Array.from(entitiesEl.querySelectorAll('.s2-entity'));
+    for (var j = 0; j < ents.length; j++) {
+      ents[j].classList.remove('pending');
+      await sleep(180);
+    }
+
+    // Confidence bar fills
+    confFill.style.width = '97%';
+    var val = 0;
+    var confTimer = setInterval(function() {
+      val += 6;
+      if (val >= 97) { val = 97; clearInterval(confTimer); }
+      confVal.textContent = val + '%';
+    }, 40);
+
+    await sleep(700);
+
+    // Actions complete one by one
+    replayBtn.innerHTML = '<span class="s2-replay-icon">⚡</span> Executing actions...';
+    var actionRows = actionsWrap.querySelectorAll('.s2-action');
+    for (var k = 0; k < actionRows.length; k++) {
+      var row = actionRows[k];
+      var status = row.querySelector('.s2-action-status');
+      var prog = row.querySelector('.s2-action-prog-fill');
+      if (status) { status.textContent = 'Processing...'; status.classList.add('doing'); }
+      await sleep(450);
+      if (status) { status.textContent = 'Done ✓'; status.classList.remove('doing'); status.classList.add('done'); }
+      if (prog) prog.style.width = '100%';
+      row.classList.add('done');
+    }
+
+    reviewBtn2.style.opacity = '1';
+    reviewBtn2.style.pointerEvents = 'auto';
+    replayBtn.disabled = false;
+    replayBtn.innerHTML = '<span class="s2-replay-icon">↺</span> Replay Voice Command';
+    running = false;
+  }
+
+  replayBtn.addEventListener('click', runReplay);
+})();
+
+// ══════════════════════════════════════════════════════════════
+// 2. COMMAND BAR LIVE FILTER
+// ══════════════════════════════════════════════════════════════
+(function() {
+  var input = document.getElementById('cmdInput');
+  var suggestions = document.querySelectorAll('.cmd-suggestion');
+  var noMatch = document.getElementById('cmdNoMatch');
+  if (!input) return;
+  input.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    var visibleCount = 0;
+    suggestions.forEach(function(s) {
+      var text = s.textContent.toLowerCase();
+      var match = q === '' || text.includes(q);
+      s.classList.toggle('hidden', !match);
+      if (match) visibleCount++;
+    });
+    if (noMatch) noMatch.classList.toggle('show', visibleCount === 0 && q !== '');
+  });
+
+  // ⌘K / Ctrl+K keyboard shortcut to focus command bar
+  document.addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      var isS1Active = document.querySelector('.screen.s1.on') !== null;
+      if (!isS1Active) {
+        var s1Tab = document.querySelector('.tab[data-tab="0"]');
+        if (s1Tab) s1Tab.click();
+      }
+      setTimeout(function() { if (input) input.focus(); }, 50);
+    }
+  });
+})();
+
+// ══════════════════════════════════════════════════════════════
+// 4. NOTIFICATION BELL + TOAST HISTORY
+// ══════════════════════════════════════════════════════════════
+var notifHistory = [];
+(function() {
+  var bell = document.getElementById('notifBell');
+  var dot = document.getElementById('notifDot');
+  var dropdown = document.getElementById('notifDropdown');
+  var list = document.getElementById('notifList');
+  var clearBtn = document.getElementById('notifClear');
+  if (!bell) return;
+
+  if (dot) dot.style.display = 'none';
+
+  window.pushNotification = function(icon, text) {
+    var time = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    notifHistory.unshift({ icon: icon, text: text, time: time });
+    if (notifHistory.length > 20) notifHistory.pop();
+    renderNotifs();
+    if (dot) dot.style.display = 'block';
+  };
+
+  function renderNotifs() {
+    if (!list) return;
+    if (notifHistory.length === 0) {
+      list.innerHTML = '<div class="notif-empty">No notifications yet. Actions you take will show up here.</div>';
+      return;
+    }
+    list.innerHTML = notifHistory.map(function(n) {
+      return '<div class="notif-item"><span class="notif-item-icon">' + n.icon + '</span><span class="notif-item-text">' + n.text + '</span><span class="notif-item-time">' + n.time + '</span></div>';
+    }).join('');
+  }
+
+  bell.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (dropdown) {
+      dropdown.classList.toggle('open');
+      if (dropdown.classList.contains('open') && dot) dot.style.display = 'none';
+    }
+  });
+  document.addEventListener('click', function(e) {
+    if (dropdown && !dropdown.contains(e.target) && e.target !== bell) dropdown.classList.remove('open');
+  });
+  if (clearBtn) clearBtn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    notifHistory = [];
+    renderNotifs();
+  });
+})();
+
+// ══════════════════════════════════════════════════════════════
+// 3. ORDER PORTAL — LIVE CART CALCULATION
+// ══════════════════════════════════════════════════════════════
+(function() {
+  var VENDOR_NAMES = { A: 'Allergan', B: 'SkinPen', C: 'Medline' };
+  var VENDOR_COLOR_VAR = { A: 'var(--blue)', B: 'var(--green)', C: 'var(--gold)' };
+
+  function getCartItems() {
+    var items = [];
+    document.querySelectorAll('.prod-card').forEach(function(card) {
+      var qtyEl = card.querySelector('.qty-val');
+      var qty = qtyEl ? (parseInt(qtyEl.textContent) || 0) : 0;
+      if (qty > 0) {
+        items.push({
+          name: card.dataset.name,
+          price: parseFloat(card.dataset.price) || 0,
+          vendor: card.dataset.vendor,
+          vendorname: card.dataset.vendorname,
+          color: card.dataset.color,
+          icon: card.dataset.icon,
+          qty: qty
+        });
+      }
+    });
+    return items;
+  }
+
+  window.recalcCart = function() {
+    var items = getCartItems();
+    var itemCount = items.reduce(function(s, i) { return s + i.qty; }, 0);
+    var subtotal = items.reduce(function(s, i) { return s + i.price * i.qty; }, 0);
+    var fee = subtotal * 0.07;
+    var total = subtotal + fee;
+
+    var byVendor = { A: 0, B: 0, C: 0 };
+    items.forEach(function(i) { if (byVendor[i.vendor] !== undefined) byVendor[i.vendor] += i.price * i.qty; });
+    var vendorsUsed = Object.keys(byVendor).filter(function(v) { return byVendor[v] > 0; }).length;
+
+    // Header + button counts
+    var headerCount = document.getElementById('s4HeaderCount');
+    var cartBtnCount = document.getElementById('s4CartBtnCount');
+    if (headerCount) headerCount.textContent = itemCount + (itemCount === 1 ? ' item in cart' : ' items in cart');
+    if (cartBtnCount) cartBtnCount.textContent = itemCount;
+
+    var sbCount = document.getElementById('s4SbCount');
+    if (sbCount) sbCount.textContent = itemCount + (itemCount === 1 ? ' item' : ' items');
+
+    // Order items list
+    var orderItemsEl = document.getElementById('s4OrderItems');
+    if (orderItemsEl) {
+      if (items.length === 0) {
+        orderItemsEl.innerHTML = '<div style="text-align:center;padding:20px 0;color:var(--dim);font-size:12.5px">Your cart is empty. Add products from the catalog.</div>';
+      } else {
+        orderItemsEl.innerHTML = items.map(function(i) {
+          return '<div class="oitem"><div class="oitem-icon ' + i.color + '">' + i.icon + '</div><div class="oitem-info"><div class="oitem-name">' + i.name + ' ×' + i.qty + '</div><div class="oitem-detail">' + i.vendorname + ' · Vendor ' + i.vendor + '</div></div><div class="oitem-price">$' + (i.price * i.qty).toLocaleString() + '</div></div>';
+        }).join('');
+      }
+    }
+
+    // Split rows
+    ['A','B','C'].forEach(function(v) {
+      var amt = byVendor[v];
+      var pct = subtotal > 0 ? Math.round((amt / subtotal) * 100) : 0;
+      var row = document.getElementById('splitRow' + v);
+      var pctEl = document.getElementById('splitPct' + v);
+      var amtEl = document.getElementById('splitAmt' + v);
+      var barEl = document.getElementById('splitBar' + v);
+      if (row) row.style.display = amt > 0 ? '' : 'none';
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (amtEl) amtEl.textContent = '$' + amt.toLocaleString();
+      if (barEl) barEl.style.width = pct + '%';
+    });
+
+    // Totals
+    var subtotalEl = document.getElementById('s4Subtotal');
+    var feeEl = document.getElementById('s4Fee');
+    var totalEl = document.getElementById('s4Total');
+    var vendorCountEl = document.getElementById('s4VendorCount');
+    var savingsEl = document.getElementById('s4Savings');
+    var placeBtn = document.getElementById('s4PlaceBtnId');
+
+    if (subtotalEl) subtotalEl.textContent = '$' + subtotal.toLocaleString(undefined, {maximumFractionDigits:0});
+    if (feeEl) feeEl.textContent = '+ $' + fee.toLocaleString(undefined, {maximumFractionDigits:0});
+    if (totalEl) totalEl.textContent = '$' + total.toLocaleString(undefined, {maximumFractionDigits:0});
+    if (vendorCountEl) vendorCountEl.textContent = vendorsUsed;
+    if (savingsEl) savingsEl.style.display = subtotal > 0 ? '' : 'none';
+    if (placeBtn) placeBtn.style.opacity = itemCount > 0 ? '1' : '.5';
+    if (placeBtn) placeBtn.style.pointerEvents = itemCount > 0 ? 'auto' : 'none';
+  };
+
+  // Hook into existing qty buttons (re-bind with recalculation)
+  document.querySelectorAll('.qty-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setTimeout(window.recalcCart, 0);
+      // Update the add-btn label too if quantity crosses 0
+      var card = this.closest('.prod-card');
+      if (card) {
+        var qtyVal = card.querySelector('.qty-val');
+        var addBtn = card.querySelector('.add-btn');
+        var qty = qtyVal ? (parseInt(qtyVal.textContent) || 0) : 0;
+        if (addBtn && !addBtn.disabled && addBtn.style.cursor !== 'not-allowed') {
+          if (qty > 0) { addBtn.textContent = 'In order'; addBtn.classList.remove('add'); addBtn.classList.add('in'); }
+          else { addBtn.textContent = 'Add'; addBtn.classList.remove('in'); addBtn.classList.add('add'); }
+        }
+      }
+    });
+  });
+
+  // Initial calc on load
+  window.recalcCart();
+})();
+
+// ══════════════════════════════════════════════════════════════
+// 8. RECENT ORDERS / REORDER
+// ══════════════════════════════════════════════════════════════
+(function() {
+  var browseTab = document.getElementById('subtabBrowse');
+  var recentTab = document.getElementById('subtabRecent');
+  var browseView = document.getElementById('browseView');
+  var recentView = document.getElementById('recentOrdersView');
+  if (!browseTab) return;
+
+  browseTab.addEventListener('click', function() {
+    browseTab.classList.add('on'); recentTab.classList.remove('on');
+    browseView.style.display = ''; recentView.classList.remove('on');
+  });
+  recentTab.addEventListener('click', function() {
+    recentTab.classList.add('on'); browseTab.classList.remove('on');
+    browseView.style.display = 'none'; recentView.classList.add('on');
+  });
+
+  document.querySelectorAll('.ro-reorder').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // Simple demo: bump qty on a couple of matching products to simulate reorder
+      var cards = document.querySelectorAll('.prod-card');
+      cards.forEach(function(c, idx) {
+        if (idx < 2) {
+          var qtyVal = c.querySelector('.qty-val');
+          var addBtn = c.querySelector('.add-btn');
+          if (qtyVal) {
+            qtyVal.textContent = String((parseInt(qtyVal.textContent)||0) + 1);
+            if (addBtn) { addBtn.textContent = 'In order'; addBtn.classList.remove('add'); addBtn.classList.add('in'); }
+          }
+        }
+      });
+      window.recalcCart();
+      browseTab.click();
+      toast('Order #' + this.dataset.order + ' items added to your cart');
+    });
+  });
+})();
+
+// ══════════════════════════════════════════════════════════════
+// 5/6. CRM: BULK ACTIONS + FUNNEL FILTER
+// ══════════════════════════════════════════════════════════════
+(function() {
+  var selectAll = document.getElementById('crmSelectAll');
+  var rowChecks = document.querySelectorAll('.row-check');
+  var bulkBar = document.getElementById('bulkBar');
+  var bulkCount = document.getElementById('bulkCount');
+  var bulkClear = document.getElementById('bulkClearBtn');
+  var bulkEmail = document.getElementById('bulkEmailBtn');
+  var bulkText = document.getElementById('bulkTextBtn');
+
+  function updateBulkBar() {
+    var checked = document.querySelectorAll('.row-check:checked');
+    var n = checked.length;
+    if (bulkCount) bulkCount.textContent = n;
+    if (bulkBar) bulkBar.classList.toggle('show', n > 0);
+    if (selectAll) selectAll.checked = n > 0 && n === document.querySelectorAll('.row-check').length;
+  }
+
+  rowChecks.forEach(function(cb) {
+    cb.addEventListener('click', function(e) { e.stopPropagation(); updateBulkBar(); });
+  });
+  if (selectAll) selectAll.addEventListener('click', function() {
+    document.querySelectorAll('.row-check').forEach(function(cb) { cb.checked = selectAll.checked; });
+    updateBulkBar();
+  });
+  if (bulkClear) bulkClear.addEventListener('click', function() {
+    document.querySelectorAll('.row-check').forEach(function(cb) { cb.checked = false; });
+    updateBulkBar();
+  });
+  function selectedNames() {
+    var names = [];
+    document.querySelectorAll('.row-check:checked').forEach(function(cb) {
+      var row = cb.closest('tr');
+      var n = row ? row.querySelector('.contact-name') : null;
+      if (n) names.push(n.textContent);
+    });
+    return names;
+  }
+  if (bulkEmail) bulkEmail.addEventListener('click', function() {
+    var names = selectedNames();
+    if (names.length === 0) return;
+    var label = names.length === 1 ? names[0] : names.length + ' investors (' + names.slice(0,2).join(', ') + (names.length > 2 ? '...' : '') + ')';
+    if (typeof openCompose === 'function') openCompose(label, '', 'email');
+  });
+  if (bulkText) bulkText.addEventListener('click', function() {
+    var names = selectedNames();
+    if (names.length === 0) return;
+    var label = names.length === 1 ? names[0] : names.length + ' investors (' + names.slice(0,2).join(', ') + (names.length > 2 ? '...' : '') + ')';
+    if (typeof openCompose === 'function') openCompose(label, '', 'text');
+  });
+
+  // Funnel stage click-to-filter
+  var funnelClearBtn = document.getElementById('funnelClearBtn');
+  document.querySelectorAll('.funnel-stage').forEach(function(stage) {
+    stage.addEventListener('click', function() {
+      var filterClass = this.dataset.stageFilter;
+      document.querySelectorAll('.funnel-stage').forEach(function(s) { s.classList.remove('active-filter'); });
+      document.querySelectorAll('.s3-filter').forEach(function(f) { f.classList.remove('on'); });
+
+      if (!filterClass) {
+        document.querySelectorAll('.crm-tr').forEach(function(row) { row.style.display = ''; });
+        if (funnelClearBtn) funnelClearBtn.style.display = 'none';
+        return;
+      }
+      this.classList.add('active-filter');
+      document.querySelectorAll('.crm-tr').forEach(function(row) {
+        var badge = row.querySelector('.sbadge');
+        var show = badge && badge.classList.contains(filterClass);
+        row.style.display = show ? '' : 'none';
+        var d = document.getElementById('detail-' + row.dataset.id);
+        if (d) d.classList.remove('open');
+      });
+      if (funnelClearBtn) funnelClearBtn.style.display = 'inline';
+    });
+  });
+  if (funnelClearBtn) funnelClearBtn.addEventListener('click', function() {
+    document.querySelectorAll('.funnel-stage').forEach(function(s) { s.classList.remove('active-filter'); });
+    document.querySelectorAll('.crm-tr').forEach(function(row) { row.style.display = ''; });
+    this.style.display = 'none';
+  });
+})();
+
+// ══════════════════════════════════════════════════════════════
+// 10. DARK MODE TOGGLE
+// ══════════════════════════════════════════════════════════════
+(function() {
+  var toggle = document.getElementById('darkModeToggle');
+  var approvalToggle = document.getElementById('approvalToggle');
+  var confToggle = document.getElementById('confToggle');
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      this.classList.toggle('off');
+      var isDark = !this.classList.contains('off');
+      document.body.classList.toggle('dark-mode', isDark);
+      toast(isDark ? 'Dark mode enabled' : 'Dark mode disabled');
+    });
+  }
+  [approvalToggle, confToggle].forEach(function(tg) {
+    if (!tg) return;
+    tg.addEventListener('click', function() {
+      this.classList.toggle('off');
+      toast(this.classList.contains('off') ? 'Setting turned off' : 'Setting turned on');
+    });
+  });
+})();
+
+})();
+</script>
+</body>
+</html>
